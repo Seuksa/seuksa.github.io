@@ -1,0 +1,64 @@
+---
+import '../styles/global.css';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { SITE, type Brand } from '../lib/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+  brand?: Brand;
+  image?: string;
+  type?: 'website' | 'article' | 'book';
+  lang?: string;
+}
+
+const { title, description, brand = 'seuksa', image, type = 'website', lang = 'km' } = Astro.props;
+const siteName = SITE[brand].name;
+const fullTitle = title ? `${title} · ${siteName}` : `${siteName} – ${SITE[brand].taglineEn}`;
+const desc = description || `${SITE[brand].tagline} – ${SITE[brand].taglineEn}`;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const ogImage = image ? new URL(image, Astro.site).href : undefined;
+---
+
+<!doctype html>
+<html lang={lang} data-brand={brand}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={desc} />
+    <link rel="canonical" href={canonical} />
+    <!-- Cascade order: Tailwind preflight < PrimeVue components < Tailwind utilities -->
+    <style is:inline>@layer theme, base, primevue, components, utilities;</style>
+    <link rel="stylesheet" href="/primevue.css" />
+    <link rel="icon" href={`/${brand}.svg`} type="image/svg+xml" />
+    <link rel="alternate" type="application/rss+xml" title="Seuksa Blog" href="/rss.xml" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:type" content={type} />
+    <meta property="og:title" content={title || siteName} />
+    <meta property="og:description" content={desc} />
+    <meta property="og:url" content={canonical} />
+    {ogImage && <meta property="og:image" content={ogImage} />}
+    <meta name="twitter:card" content={ogImage ? 'summary_large_image' : 'summary'} />
+    <meta name="theme-color" content={brand === 'nitean' ? '#b45309' : '#4338ca'} />
+    <script is:inline>
+      try {
+        const t = localStorage.getItem('theme');
+        if (t === 'dark' || (!t && matchMedia('(prefers-color-scheme: dark)').matches))
+          document.documentElement.classList.add('dark');
+      } catch {}
+    </script>
+  </head>
+  <body class="flex min-h-dvh flex-col">
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:rounded focus:bg-primary focus:px-3 focus:py-2 focus:text-primary-contrast">
+      Skip to content
+    </a>
+    <SiteHeader brand={brand} />
+    <main id="main" class="flex-1">
+      <slot />
+    </main>
+    <SiteFooter brand={brand} />
+  </body>
+</html>

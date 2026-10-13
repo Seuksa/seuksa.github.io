@@ -1,0 +1,39 @@
+---
+import { NAV, SITE, type Brand } from '../lib/site';
+
+interface Props {
+  brand: Brand;
+}
+const { brand } = Astro.props;
+const year = new Date().getFullYear();
+---
+
+<footer class="mt-20 border-t border-surface-200 bg-surface-50 dark:border-surface-800 dark:bg-surface-900">
+  <div class="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:grid-cols-2 lg:grid-cols-4">
+    <div class="lg:col-span-2">
+      <p class="flex items-center gap-2 text-lg font-semibold">
+        <img src={`/${brand}.svg`} alt="" width="28" height="28" class="size-7" />
+        {SITE[brand].name}
+      </p>
+      <p class="mt-2 max-w-sm text-sm text-surface-500" lang="km">{SITE[brand].tagline}</p>
+      <p class="max-w-sm text-sm text-surface-500" lang="en">{SITE[brand].taglineEn}</p>
+    </div>
+    <div>
+      <h2 class="text-sm font-semibold text-surface-900 dark:text-surface-0">សិក្សា Seuksa</h2>
+      <ul class="mt-3 space-y-2 text-sm">
+        {NAV.seuksa.map((i) => <li><a class="text-surface-500 hover:text-primary-600" href={i.href}>{i.label}</a></li>)}
+      </ul>
+    </div>
+    <div>
+      <h2 class="text-sm font-semibold text-surface-900 dark:text-surface-0">និទាន Nitean</h2>
+      <ul class="mt-3 space-y-2 text-sm">
+        {NAV.nitean.map((i) => <li><a class="text-surface-500 hover:text-primary-600" href={i.href}>{i.label}</a></li>)}
+        <li><a class="text-surface-500 hover:text-primary-600" href="/search/">Search</a></li>
+        <li><a class="text-surface-500 hover:text-primary-600" href="/rss.xml">RSS</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-surface-200 py-5 text-center text-xs text-surface-500 dark:border-surface-800">
+    © 2012–{year} Seuksa & Nitean · Content archived from seuksa.com and nitean.com
+  </div>
+</footer>

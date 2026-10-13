@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import { getArticles, tagUrl } from '../../lib/site';
+
+const all = await getArticles();
+const counts = new Map<string, number>();
+for (const a of all) for (const t of a.data.tags) counts.set(t, (counts.get(t) || 0) + 1);
+const tags = [...counts].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+const max = Math.max(...counts.values());
+---
+
+<BaseLayout title="Topics" description="Browse Seuksa articles, stories and quotes by topic.">
+  <PageHero title="Topics" kicker="ប្រធានបទ" icon="pi pi-tags" description={`${tags.length} topics across all Seuksa sections.`} />
+  <div class="mx-auto flex max-w-6xl flex-wrap gap-2 px-4 py-10">
+    {
+      tags.map(([t, n]) => (
+        <a
+          href={tagUrl(t)}
+          class="rounded-full border border-surface-200 px-3 py-1.5 transition hover:border-primary-300 hover:bg-primary-50 hover:text-primary-700 dark:border-surface-700 dark:hover:bg-primary-950"
+          style={`font-size:${0.8 + (n / max) * 0.7}rem`}
+        >
+          {t} <span class="text-xs text-surface-400">{n}</span>
+        </a>
+      ))
+    }
+  </div>
+</BaseLayout>

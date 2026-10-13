@@ -1,0 +1,29 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { TONES } from '../lib/site';
+
+interface Props {
+  book: CollectionEntry<'books'>;
+  class?: string;
+}
+const { book, class: cls } = Astro.props;
+const { title, subtitle, cover, tone } = book.data;
+---
+
+<div class:list={['relative aspect-[2/3] overflow-hidden rounded-r-lg rounded-l-sm shadow-xl ring-1 ring-black/10', cls]}>
+  {
+    cover ? (
+      <img src={cover} alt={title} class="size-full object-cover" loading="lazy" />
+    ) : (
+      <div class:list={['flex size-full flex-col justify-between bg-gradient-to-br p-5 text-white', TONES[tone]]}>
+        <i class="pi pi-book text-2xl text-white/60" aria-hidden="true" />
+        <div>
+          <p class="font-khmer-serif text-xl leading-snug font-semibold" lang="km">{title}</p>
+          {subtitle && <p class="mt-2 text-xs tracking-wide text-white/75 uppercase">{subtitle}</p>}
+        </div>
+        <p class="text-[10px] tracking-[0.2em] text-white/60 uppercase">Nitean</p>
+      </div>
+    )
+  }
+  <span class="pointer-events-none absolute inset-y-0 left-0 w-2 bg-gradient-to-r from-black/30 to-transparent" aria-hidden="true"></span>
+</div>

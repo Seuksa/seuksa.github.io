@@ -1,0 +1,124 @@
+---
+import { render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { PROSE, SECTIONS, articleUrl, formatDate, getArticles, htmlLang, tagUrl, type Article } from '../../lib/site';
+
+export async function getStaticPaths() {
+  const all = await getArticles();
+  return all.map((entry) => {
+    const siblings = all.filter((a) => a.data.section === entry.data.section);
+    const i = siblings.indexOf(entry);
+    const related = siblings
+      .filter((a) => a !== entry && a.data.categories.some((c) => entry.data.categories.includes(c)))
+      .slice(0, 3);
+    return {
+      params: { section: entry.data.section, slug: entry.data.slug },
+      props: { entry, newer: siblings[i - 1], older: siblings[i + 1], related },
+    };
+  });
+}
+
+interface Props {
+  entry: Article;
+  newer?: Article;
+  older?: Article;
+  related: Article[];
+}
+
+const { entry, newer, older, related } = Astro.props;
+const { Content } = await render(entry);
+const { title, section, date, updated, categories, tags, description, cover, lang, quoteAuthor, source } = entry.data;
+const meta = SECTIONS[section];
+const isQuote = section === 'quotes';
+---
+
+<BaseLayout title={title} description={description} image={cover} type="article" lang={htmlLang(lang)}>
+  <article class="mx-auto max-w-3xl px-4 py-10">
+    <Breadcrumbs items={[{ label: 'Seuksa', href: '/' }, { label: meta.title, href: `/${section}/` }, { label: title }]} />
+
+    <header class="mt-8">
+      <div class="flex flex-wrap items-center gap-2 text-sm text-surface-500">
+        <span class="inline-flex items-center gap-1.5 font-medium text-primary-700 dark:text-primary-300"><i class={meta.icon}></i>{meta.title}</span>
+        <span aria-hidden="true">·</span>
+        <time datetime={date.toISOString()}>{formatDate(date)}</time>
+        {updated && updated > date && <span class="text-surface-400">(updated {formatDate(updated)})</span>}
+      </div>
+      <h1 class:list={['mt-3 font-bold tracking-tight text-surface-900 dark:text-surface-0', isQuote ? 'text-2xl' : 'text-3xl sm:text-4xl']}>
+        {title}
+      </h1>
+      {
+        categories.length > 0 && (
+          <div class="mt-4 flex flex-wrap gap-2">
+            {categories.map((c) => (
+              <span class="rounded-full bg-primary-50 px-3 py-1 text-xs font-medium text-primary-700 dark:bg-primary-950 dark:text-primary-300">{c}</span>
+            ))}
+          </div>
+        )
+      }
+    </header>
+
+    {cover && !isQuote && <img src={cover} alt="" class="mt-8 w-full rounded-2xl border border-surface-200 dark:border-surface-800" />}
+
+    <div class:list={[PROSE, 'mt-8', isQuote && 'prose-xl rounded-3xl bg-primary-50/60 p-8 dark:bg-primary-950/40']}>
+      <Content />
+    </div>
+    {quoteAuthor && <p class="mt-4 text-right text-lg font-medium text-surface-700 dark:text-surface-300">— {quoteAuthor}</p>}
+
+    {
+      tags.length > 0 && (
+        <div class="mt-10 flex flex-wrap items-center gap-2 border-t border-surface-200 pt-6 dark:border-surface-800">
+          <i class="pi pi-tags text-surface-400" />
+          {tags.map((t) => (
+            <a href={tagUrl(t)} class="rounded-md border border-surface-200 px-2.5 py-1 text-xs text-surface-600 hover:border-primary-300 hover:text-primary-700 dark:border-surface-700 dark:text-surface-400">
+              #{t}
+            </a>
+          ))}
+        </div>
+      )
+    }
+    {
+      source && (
+        <p class="mt-6 text-xs text-surface-400">
+          Originally published at <span class="break-all">{source.replace(/^https?:\/\//, '')}</span>
+        </p>
+      )
+    }
+
+    <nav class="mt-10 grid gap-4 sm:grid-cols-2" aria-label="More in this section">
+      {
+        newer && (
+          <a href={articleUrl(newer)} class="rounded-xl border border-surface-200 p-4 hover:border-primary-300 dark:border-surface-800">
+            <span class="text-xs text-surface-500">← Newer</span>
+            <span class="mt-1 line-clamp-2 block font-medium" lang={htmlLang(newer.data.lang)}>{newer.data.title}</span>
+          </a>
+        )
+      }
+      {
+        older && (
+          <a href={articleUrl(older)} class="rounded-xl border border-surface-200 p-4 text-right hover:border-primary-300 sm:col-start-2 dark:border-surface-800">
+            <span class="text-xs text-surface-500">Older →</span>
+            <span class="mt-1 line-clamp-2 block font-medium" lang={htmlLang(older.data.lang)}>{older.data.title}</span>
+          </a>
+        )
+      }
+    </nav>
+  </article>
+
+  {
+    related.length > 0 && !isQuote && (
+      <aside class="mx-auto max-w-6xl px-4">
+        <h2 class="mb-4 text-xl font-bold">Related</h2>
+        <div class="grid gap-5 md:grid-cols-3">
+          {related.map((a) => (
+            <a href={articleUrl(a)} class="rounded-2xl border border-surface-200 p-5 hover:border-primary-300 hover:shadow-md dark:border-surface-800">
+              <time class="text-xs text-surface-500">{formatDate(a.data.date)}</time>
+              <h3 class="mt-1 font-semibold" lang={htmlLang(a.data.lang)}>{a.data.title}</h3>
+              <p class="mt-1 line-clamp-2 text-sm text-surface-600 dark:text-surface-400" lang={htmlLang(a.data.lang)}>{a.data.description}</p>
+            </a>
+          ))}
+        </div>
+      </aside>
+    )
+  }
+</BaseLayout>

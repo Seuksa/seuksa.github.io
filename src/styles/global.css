@@ -1,0 +1,50 @@
+@import 'tailwindcss';
+@import 'primeicons/primeicons.css';
+@import '@fontsource-variable/kantumruy-pro';
+@import '@fontsource-variable/noto-serif-khmer';
+@import '@fontsource-variable/literata';
+
+@plugin '@tailwindcss/typography';
+@plugin 'tailwindcss-primeui';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Kantumruy Pro Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Literata Variable', 'Noto Serif Khmer Variable', ui-serif, Georgia, serif;
+  --font-khmer-serif: 'Noto Serif Khmer Variable', 'Literata Variable', serif;
+}
+
+/* Brand palettes consumed by the PrimeVue preset (src/lib/theme.ts) and the `primary-*` / `surface-*` utilities. */
+:root,
+[data-brand='seuksa'] {
+  --brand-50: #eef2ff; --brand-100: #e0e7ff; --brand-200: #c7d2fe; --brand-300: #a5b4fc;
+  --brand-400: #818cf8; --brand-500: #6366f1; --brand-600: #4f46e5; --brand-700: #4338ca;
+  --brand-800: #3730a3; --brand-900: #312e81; --brand-950: #1e1b4b;
+  --surface-50: #f8fafc; --surface-100: #f1f5f9; --surface-200: #e2e8f0; --surface-300: #cbd5e1;
+  --surface-400: #94a3b8; --surface-500: #64748b; --surface-600: #475569; --surface-700: #334155;
+  --surface-800: #1e293b; --surface-900: #0f172a; --surface-950: #020617;
+}
+
+[data-brand='nitean'] {
+  --brand-50: #fffbeb; --brand-100: #fef3c7; --brand-200: #fde68a; --brand-300: #fcd34d;
+  --brand-400: #fbbf24; --brand-500: #f59e0b; --brand-600: #d97706; --brand-700: #b45309;
+  --brand-800: #92400e; --brand-900: #78350f; --brand-950: #451a03;
+  --surface-50: #fafaf9; --surface-100: #f5f5f4; --surface-200: #e7e5e4; --surface-300: #d6d3d1;
+  --surface-400: #a8a29e; --surface-500: #78716c; --surface-600: #57534e; --surface-700: #44403c;
+  --surface-800: #292524; --surface-900: #1c1917; --surface-950: #0c0a09;
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth bg-surface-0 text-surface-800 antialiased dark:bg-surface-950 dark:text-surface-200;
+  }
+  /* Khmer script needs more vertical room than Latin. */
+  :lang(km) {
+    @apply leading-[1.9];
+  }
+}
+
+@utility reader {
+  font-size: var(--reader-size, 1.125rem);
+}

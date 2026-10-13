@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import ArticleExplorer from '../../components/ArticleExplorer.vue';
+import { getArticles, slugify, toCard, type Article } from '../../lib/site';
+
+export async function getStaticPaths() {
+  const all = await getArticles();
+  const byTag = new Map<string, { name: string; items: Article[] }>();
+  for (const a of all)
+    for (const name of a.data.tags) {
+      const key = slugify(name);
+      if (!key) continue;
+      if (!byTag.has(key)) byTag.set(key, { name, items: [] });
+      byTag.get(key)!.items.push(a);
+    }
+  return [...byTag].map(([tag, v]) => ({ params: { tag }, props: v }));
+}
+
+const { name, items } = Astro.props as { name: string; items: Article[] };
+---
+
+<BaseLayout title={`#${name}`} description={`Seuksa articles tagged ${name}.`}>
+  <PageHero title={`#${name}`} kicker="Topic" icon="pi pi-tag" description={`${items.length} item${items.length === 1 ? '' : 's'} tagged “${name}”.`}>
+    <a href="/tags/" class="mt-4 inline-block text-sm text-primary-700 hover:underline dark:text-primary-300">← All topics</a>
+  </PageHero>
+  <div class="mx-auto max-w-6xl px-4 py-10">
+    <ArticleExplorer client:load items={items.map(toCard)} />
+  </div>
+</BaseLayout>

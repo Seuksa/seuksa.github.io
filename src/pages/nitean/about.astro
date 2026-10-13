@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getBooks } from '../../lib/site';
+
+const books = await getBooks();
+---
+
+<BaseLayout brand="nitean" title="About Nitean" description="Nitean (និទាន) is the book library of Seuksa – Khmer folktales and collections to read online.">
+  <article class="mx-auto max-w-2xl px-4 py-14">
+    <p class="text-sm font-semibold tracking-[0.3em] text-primary-700 uppercase dark:text-primary-400">About</p>
+    <h1 class="mt-3 font-khmer-serif text-4xl font-bold" lang="km">អំពី និទាន</h1>
+    <div class="prose prose-lg prose-stone mt-8 font-serif dark:prose-invert prose-a:text-primary-700 dark:prose-a:text-primary-300">
+      <p lang="km" class="font-khmer-serif">នាំគ្នាសរសេរ និងអានអត្ថបទសៀវភៅនៅទីនេះ។ អានច្រើន ចម្រើនចំណេះ។</p>
+      <p>
+        <strong>Nitean</strong> (និទាន, “tale”) began in 2013 as an e-book publishing platform for Khmer readers. Today it
+        is the library side of <a href="/">Seuksa</a>: content that is meant to be read like a book – with parts, chapters
+        and a reading order – lives here, while short articles, Q&amp;A and quotes stay on Seuksa.
+      </p>
+      <h2>The collection</h2>
+      <ul>
+        {books.map((b) => (
+          <li>
+            <a href={`/nitean/${b.id}/`} lang={b.data.lang === 'en' ? 'en' : 'km'}>{b.data.title}</a>
+            {b.data.subtitle && <> – {b.data.subtitle}</>} ({b.data.chapters} {b.data.chapters === 1 ? 'chapter' : 'chapters'})
+          </li>
+        ))}
+      </ul>
+      <h2>Sources &amp; copyright</h2>
+      <p>
+        The Khmer Folktales texts come from the open-source KhmerText project on SourceForge, compiled from the
+        <em>ប្រជុំរឿងព្រេងខ្មែរ</em> volumes. Article collections keep the copyright notice of their original authors, linked in
+        each chapter.
+      </p>
+      <p>Have a book or story to share? Send it to us through <a href="/about/">Seuksa</a>.</p>
+    </div>
+  </article>
+</BaseLayout>

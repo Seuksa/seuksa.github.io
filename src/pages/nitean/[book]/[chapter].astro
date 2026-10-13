@@ -1,0 +1,98 @@
+---
+import { render, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import ReaderControls from '../../../components/ReaderControls.vue';
+import { PROSE_BOOK, chapterUrl, getBooks, getChapters, htmlLang } from '../../../lib/site';
+
+type Chapter = CollectionEntry<'chapters'>;
+
+export async function getStaticPaths() {
+  const paths: { params: { book: string; chapter: string }; props: Props }[] = [];
+  for (const book of await getBooks()) {
+    const chapters = await getChapters(book.id);
+    chapters.forEach((entry, i) =>
+      paths.push({
+        params: { book: book.id, chapter: entry.data.slug },
+        props: { entry, book, chapters, prev: chapters[i - 1], next: chapters[i + 1] },
+      }),
+    );
+  }
+  return paths;
+}
+
+interface Props {
+  entry: Chapter;
+  book: CollectionEntry<'books'>;
+  chapters: Chapter[];
+  prev?: Chapter;
+  next?: Chapter;
+}
+
+const { entry, book, chapters, prev, next } = Astro.props;
+const { Content } = await render(entry);
+const partTitle = (key?: string) => book.data.parts.find((p) => p.key === key)?.title;
+const part = partTitle(entry.data.part);
+const bookUrl = `/nitean/${book.id}/`;
+const position = chapters.indexOf(entry) + 1;
+const toc = chapters.map((c) => ({
+  title: c.data.title,
+  url: chapterUrl(c),
+  part: partTitle(c.data.part) ?? (c.data.kind === 'back' ? 'Back matter' : undefined),
+}));
+---
+
+<BaseLayout
+  brand="nitean"
+  title={`${entry.data.title} · ${book.data.title}`}
+  description={entry.data.description}
+  type="article"
+  lang={htmlLang(entry.data.lang)}
+>
+  <div class="sticky top-16 z-20 border-b border-surface-200 bg-surface-0/90 backdrop-blur dark:border-surface-800 dark:bg-surface-950/90">
+    <div class="mx-auto flex h-12 max-w-3xl items-center justify-between gap-4 px-4">
+      <a href={bookUrl} class="line-clamp-1 font-khmer-serif text-sm font-medium text-surface-600 hover:text-primary-700 dark:text-surface-300">
+        {book.data.title}
+      </a>
+      <ReaderControls client:idle toc={toc} current={chapterUrl(entry)} bookTitle={book.data.title} bookUrl={bookUrl} />
+    </div>
+    <div class="h-0.5 bg-primary-500" style={`width:${(position / chapters.length) * 100}%`} aria-hidden="true"></div>
+  </div>
+
+  <article class="mx-auto max-w-3xl px-4 py-10 sm:py-14">
+    <Breadcrumbs items={[{ label: 'Nitean', href: '/nitean/' }, { label: book.data.title, href: bookUrl }, ...(part ? [{ label: part }] : [])]} />
+    <header class="mt-10 mb-10 text-center">
+      {part && <p class="font-khmer-serif text-sm tracking-wide text-primary-700 dark:text-primary-400">{part}</p>}
+      <h1 class="mt-3 font-khmer-serif text-3xl leading-snug font-bold text-surface-900 sm:text-4xl dark:text-surface-0">{entry.data.title}</h1>
+      <p class="mt-4 text-xs text-surface-400">{position} / {chapters.length}</p>
+      <div class="mx-auto mt-6 h-px w-16 bg-primary-300" aria-hidden="true"></div>
+    </header>
+
+    <div class={PROSE_BOOK}>
+      <Content />
+    </div>
+
+    <nav class="mt-16 grid gap-4 border-t border-surface-200 pt-8 sm:grid-cols-2 dark:border-surface-800" aria-label="Chapter navigation">
+      {
+        prev ? (
+          <a href={chapterUrl(prev)} class="group rounded-xl border border-surface-200 p-4 hover:border-primary-300 dark:border-surface-800">
+            <span class="text-xs text-surface-500">← Previous</span>
+            <span class="mt-1 block font-khmer-serif font-medium group-hover:text-primary-700 dark:group-hover:text-primary-300">{prev.data.title}</span>
+          </a>
+        ) : (
+          <a href={bookUrl} class="rounded-xl border border-dashed border-surface-300 p-4 text-sm text-surface-500 dark:border-surface-700">← Book overview</a>
+        )
+      }
+      {
+        next ? (
+          <a href={chapterUrl(next)} class="group rounded-xl border border-surface-200 p-4 text-right hover:border-primary-300 dark:border-surface-800">
+            <span class="text-xs text-surface-500">Next →</span>
+            <span class="mt-1 block font-khmer-serif font-medium group-hover:text-primary-700 dark:group-hover:text-primary-300">{next.data.title}</span>
+          </a>
+        ) : (
+          <a href="/nitean/" class="rounded-xl border border-dashed border-surface-300 p-4 text-right text-sm text-surface-500 dark:border-surface-700">The end · Back to the library →</a>
+        )
+      }
+    </nav>
+  </article>
+</BaseLayout>

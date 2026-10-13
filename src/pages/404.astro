@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Page not found">
+  <div class="mx-auto flex max-w-xl flex-col items-center px-4 py-24 text-center">
+    <p class="text-7xl font-bold text-primary-200 dark:text-primary-900">404</p>
+    <h1 class="mt-4 text-2xl font-bold">This page has moved or no longer exists</h1>
+    <p class="mt-3 text-surface-600 dark:text-surface-400" lang="km">ទំព័រនេះមិនមានទេ។ សូមស្វែងរកម្តងទៀត។</p>
+    <div class="mt-8 flex flex-wrap justify-center gap-3">
+      <a href="/search/" class="rounded-lg bg-primary-600 px-5 py-3 font-medium text-white hover:bg-primary-700"><i class="pi pi-search mr-2"></i>Search</a>
+      <a href="/" class="rounded-lg border border-surface-300 px-5 py-3 font-medium dark:border-surface-700">Seuksa home</a>
+      <a href="/nitean/" class="rounded-lg border border-surface-300 px-5 py-3 font-medium dark:border-surface-700">Nitean library</a>
+    </div>
+  </div>
+</BaseLayout>
