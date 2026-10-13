@@ -17,6 +17,16 @@ const items = await getArticles(section);
 <BaseLayout title={`${meta.title} · ${meta.km}`} description={meta.description}>
   <PageHero title={meta.title} kicker={meta.km} icon={meta.icon} description={meta.description}>
     <p class="mt-3 text-sm text-surface-500">{items.length} {section === 'quotes' ? 'quotes' : 'articles'}</p>
+    {
+      section === 'quotes' && (
+        <a
+          href="/quotes/embed/"
+          class="mt-6 inline-flex items-center gap-2 rounded-lg bg-primary-600 px-4 py-2.5 text-sm font-medium text-white shadow-sm hover:bg-primary-700"
+        >
+          <i class="pi pi-code" /> Embed quotes on your website
+        </a>
+      )
+    }
   </PageHero>
   <div class="mx-auto max-w-6xl px-4 py-10">
     {

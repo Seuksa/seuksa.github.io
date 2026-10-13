@@ -129,6 +129,7 @@ export function toQuote(a: Article) {
   return {
     id: a.id,
     title: a.data.title,
+    slug: a.data.slug,
     url: articleUrl(a),
     html: a.rendered?.html ?? '',
     author: a.data.quoteAuthor,

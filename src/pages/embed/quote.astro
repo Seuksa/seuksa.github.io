@@ -1,0 +1,48 @@
+---
+/**
+ * iframe version of the quote embed, for platforms that don't allow <script>:
+ *   <iframe src="https://seuksa.com/embed/quote/?quote=daily&lang=both&theme=light" …></iframe>
+ * Query parameters mirror the data-* options of /embed/quote.js.
+ */
+---
+
+<!doctype html>
+<html lang="km">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Seuksa Quote</title>
+    <link rel="canonical" href="https://seuksa.com/quotes/" />
+    <style is:inline>
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        background: transparent;
+      }
+      #q {
+        height: 100%;
+        max-width: none;
+      }
+      #q > a {
+        font: 16px system-ui, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="q" data-fill><a href="https://seuksa.com/quotes/" target="_blank" rel="noopener">Quotes by Seuksa</a></div>
+    <script is:inline>
+      (function () {
+        var p = new URLSearchParams(location.search);
+        var q = document.getElementById('q');
+        ['quote', 'category', 'lang', 'theme', 'accent', 'shuffle'].forEach(function (k) {
+          var v = p.get(k) || (k === 'quote' ? p.get('id') : null);
+          if (v) q.dataset[k] = v;
+        });
+        q.className = 'seuksa-quote';
+      })();
+    </script>
+    <script is:inline src="/embed/quote.js"></script>
+  </body>
+</html>

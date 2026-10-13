@@ -10,6 +10,7 @@ import Paginator from 'primevue/paginator';
 export interface QuoteItem {
   id: string;
   title: string;
+  slug: string;
   url: string;
   html: string;
   author?: string;
@@ -85,7 +86,12 @@ watch([query, category, sort], () => (first.value = 0));
         />
         <figcaption class="mt-4 flex items-center justify-between gap-3 border-t border-surface-100 pt-3 text-xs text-surface-500 dark:border-surface-800">
           <span class="font-medium text-surface-700 dark:text-surface-300">{{ q.author ? `— ${q.author}` : q.date }}</span>
-          <a :href="q.url" class="text-primary-600 hover:underline">Open <i class="pi pi-arrow-right text-[10px]" /></a>
+          <span class="flex shrink-0 items-center gap-3">
+            <a :href="`/quotes/embed/?id=${encodeURIComponent(q.slug)}`" class="text-surface-500 hover:text-primary-600" :aria-label="`Embed: ${q.title}`">
+              <i class="pi pi-code text-[11px]" /> Embed
+            </a>
+            <a :href="q.url" class="text-primary-600 hover:underline">Open <i class="pi pi-arrow-right text-[10px]" /></a>
+          </span>
         </figcaption>
       </figure>
     </div>
