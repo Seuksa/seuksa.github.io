@@ -5,7 +5,7 @@ export type Section = CollectionEntry<'articles'>['data']['section'];
 export type Article = CollectionEntry<'articles'>;
 
 export const SITE = {
-  url: 'https://seuksa.github.io',
+  url: 'https://seuksa.com',
   seuksa: {
     name: 'សិក្សា Seuksa',
     tagline: 'អ្វីៗដើម្បីការអប់រំ ក្នុងសង្គមខ្មែរ',

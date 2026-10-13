@@ -57,3 +57,31 @@ so its CSS is pre-rendered (otherwise it is only styled after hydration).
 
 `.github/workflows/deploy.yml` builds and publishes to GitHub Pages on every push to `main`
 (set *Settings → Pages → Source* to **GitHub Actions**).
+
+### Custom domain: seuksa.com
+
+The site is served at **https://seuksa.com** (`site` in `astro.config.mjs`, `SITE.url` in `src/lib/site.ts`,
+and `public/CNAME`, which is copied into the build).
+
+1. **DNS** at the seuksa.com registrar – remove the old records pointing to the previous server, then add:
+
+   | Type | Host | Value |
+   | --- | --- | --- |
+   | A | `@` | `185.199.108.153` |
+   | A | `@` | `185.199.109.153` |
+   | A | `@` | `185.199.110.153` |
+   | A | `@` | `185.199.111.153` |
+   | AAAA | `@` | `2606:50c0:8000::153` |
+   | AAAA | `@` | `2606:50c0:8001::153` |
+   | AAAA | `@` | `2606:50c0:8002::153` |
+   | AAAA | `@` | `2606:50c0:8003::153` |
+   | CNAME | `www` | `<github-user>.github.io` |
+
+   GitHub then redirects `www.seuksa.com` → `seuksa.com`.
+2. **GitHub** – *Settings → Pages → Custom domain*: `seuksa.com`, wait for the DNS check, then tick
+   **Enforce HTTPS** (the certificate can take up to an hour).
+3. Recommended: verify the domain under your account’s *Settings → Pages → Verified domains*
+   (a TXT record) so no other repository can claim it.
+
+The old sub-domains (blog., quote., story., answer.seuksa.com …) are not served by this site; their content now
+lives under `/blog/`, `/quotes/`, `/stories/` and `/answers/`.

@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  site: 'https://seuksa.github.io',
+  site: 'https://seuksa.com',
   trailingSlash: 'ignore',
   integrations: [vue({ appEntrypoint: '/src/pages/_app' }), sitemap()],
   markdown: {
