@@ -18,6 +18,8 @@ Stack: Astro 7 (static) · Vue 3 islands · PrimeVue 4 (Aura preset) · Tailwind
 | `/nitean/<book>/` | Book overview + table of contents by part |
 | `/nitean/<book>/<chapter>/` | Reader: contents drawer, font size, prev/next, progress |
 | `/search/` | Client-side search over both brands (`/search.json`) |
+| `/stats/`, `/stats/bac-ii/` | Statistics: Bac II results 1980–today (charts, table, sources; `.csv` / `.json` downloads) |
+| `/quotes/embed/`, `/embed/quote.js`, `/api/quotes.json` | Quote embed builder, widget script and public quotes API |
 | `/rss.xml`, `/sitemap-index.xml` | Feeds |
 
 Seuksa = short-form content (indigo theme). Nitean = anything read as a book (amber theme).
@@ -26,7 +28,15 @@ in `src/styles/global.css`, which feed both PrimeVue and the Tailwind `primary-*
 
 ## Content
 
-Content in `src/content/` and images in `public/media/` are **generated** – don't edit them by hand:
+`src/content/seuksa/`, `pages/`, `nitean/` and `public/media/` are **generated** – don't edit them by hand.
+New posts written for this site go in **`src/content/authored/<section>/<slug>.md`** (same front matter as the
+imported posts); the importer never touches that folder.
+
+Statistics live in typed data files, not Markdown: **`src/data/bac-ii.ts`** holds one row per exam year plus a
+source registry. Add next year’s row and its sources there – the stats page, charts and downloads update on build.
+Only official MoEYS figures (or reports quoting a MoEYS statement) go in; unpublished values stay `null`.
+
+Re-import the archive:
 
 ```sh
 npm run import        # reads ../seuksa-nitean/content (or: npm run import -- <path>, or $SEUKSA_CONTENT)

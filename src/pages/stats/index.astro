@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import { BAC_II } from '../../data/bac-ii';
+
+const first = BAC_II[0];
+const latest = BAC_II.at(-1)!;
+const datasets = [
+  {
+    href: '/stats/bac-ii/',
+    title: 'Bac II – grade 12 national exam',
+    km: 'ស្ថិតិប្រឡងបាក់ឌុប',
+    text: `Candidates, pass rate and grades A–E, ${first.year}–${latest.year}. Latest: ${latest.passRate}% passed in ${latest.year}.`,
+    icon: 'pi pi-chart-bar',
+  },
+];
+---
+
+<BaseLayout title="Statistics · ស្ថិតិ" description="Education statistics for Cambodia from official sources, kept up to date by Seuksa.">
+  <PageHero title="Statistics" kicker="ស្ថិតិ" icon="pi pi-chart-line" description="Cambodian education data from official sources, with a source for every figure." />
+  <div class="mx-auto grid max-w-6xl gap-5 px-4 py-10 md:grid-cols-2">
+    {
+      datasets.map((d) => (
+        <a href={d.href} class="group rounded-2xl border border-surface-200 p-6 transition hover:-translate-y-0.5 hover:border-primary-300 hover:shadow-lg dark:border-surface-800">
+          <span class="inline-flex size-11 items-center justify-center rounded-xl bg-primary-100 text-primary-700 dark:bg-primary-900 dark:text-primary-200">
+            <i class={`${d.icon} text-lg`} />
+          </span>
+          <h2 class="mt-4 text-lg font-semibold group-hover:text-primary-700 dark:group-hover:text-primary-300">{d.title}</h2>
+          <p class="text-sm text-primary-700 dark:text-primary-300" lang="km">{d.km}</p>
+          <p class="mt-2 text-sm text-surface-600 dark:text-surface-400">{d.text}</p>
+        </a>
+      ))
+    }
+  </div>
+</BaseLayout>

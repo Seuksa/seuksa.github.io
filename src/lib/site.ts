@@ -50,6 +50,7 @@ export const SECTION_ORDER: Section[] = ['blog', 'answers', 'stories', 'quotes']
 export const NAV: Record<Brand, { label: string; href: string; icon?: string }[]> = {
   seuksa: [
     ...SECTION_ORDER.map((s) => ({ label: SECTIONS[s].title, href: `/${s}/`, icon: SECTIONS[s].icon })),
+    { label: 'Stats', href: '/stats/', icon: 'pi pi-chart-bar' },
     { label: 'Topics', href: '/tags/', icon: 'pi pi-tags' },
     { label: 'About', href: '/about/', icon: 'pi pi-info-circle' },
   ],
