@@ -24,7 +24,7 @@ const h = (year: number, grade: Grade, subject: Subject, rank: number): HonourRe
 
 const LINKS: Link[] = [
   // IMO
-  { competition: 'IMO', name: 'Sothiroth Hem', honours: [h(2014, 9, 'math', 7)], possible: true }, // ហែម សុធីវុត
+  { competition: 'IMO', name: 'Sothiroth Hem', honours: [h(2014, 9, 'math', 7)] },
   { competition: 'IMO', name: 'Techheang Meng', honours: [h(2014, 9, 'math', 2)] },
   { competition: 'IMO', name: 'Sodavann Hak', honours: [h(2014, 9, 'math', 8)] },
   { competition: 'IMO', name: 'Sivmey Chhun', honours: [h(2014, 9, 'math', 10)] },
