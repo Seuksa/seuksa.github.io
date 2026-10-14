@@ -3,9 +3,9 @@
  "resultsDate": "6–7 Apr 2014",
  "host": "Preah Sihanouk province",
  "ranksPerSubject": 10,
- "transcribedFrom": "text",
+ "transcribedFrom": "image",
  "verified": false,
- "note": "Partial: only the three grade 12 gold medallists (rank 1) are recorded, from the text report. The full official list exists only as low-resolution phone photos (archived) that are too blurred to transcribe reliably. Girls won 11 of the 18 medals this year.",
+ "note": "Transcribed with AI assistance (Gemini) from the photos of the official list and corrected by hand. Grade 12 rank-1 names follow the published text report where the photo reading differed: គង់ រតនធីតា (photo reading: គង់ រតនាធិតា); ជេត ឆវីវណ្ណ (photo reading: ដេត ឆរីវណ្ណ). Not legible in the photos: grade 9 physics has 8 of 10 ranks. The text report says girls won 11 of the 18 top-3 places; this transcription gives 12, so a gender may be misread. Awaiting a full check against the originals.",
  "sources": [
   {
    "title": "ជយលាភីសិស្សពូកែមេដាយមាស គណិតវិទ្យា រូបវិទ្យា អក្សរសាស្រ្តខ្មែរ ២០១៤",
@@ -25,6 +25,12 @@
    "publisher": "MoEYS list",
    "date": "2014-04-06",
    "archive": "/archive/outstanding/2014/cambomaths-2014-2.jpg"
+  },
+  {
+   "title": "Transcription of the official list photos (AI-assisted, Gemini, corrected by hand) – names, schools, provinces; dates of birth omitted",
+   "publisher": "Seuksa",
+   "date": "2026-10-14",
+   "archive": "/archive/outstanding/2014/transcription-2014.csv"
   }
  ],
  "entries": [
@@ -39,6 +45,87 @@
   },
   {
    "grade": 12,
+   "subject": "khmer",
+   "rank": 2,
+   "name": "ច័ន្ទ រតនាភា",
+   "gender": "F",
+   "school": "វិ.ពោធិ៍សាត់",
+   "province": "pursat"
+  },
+  {
+   "grade": 12,
+   "subject": "khmer",
+   "rank": 3,
+   "name": "ចេង ស៊ាងណៃ",
+   "gender": "F",
+   "school": "វិ.អង្គរ",
+   "province": "siem-reap"
+  },
+  {
+   "grade": 12,
+   "subject": "khmer",
+   "rank": 4,
+   "name": "នេន ចន្ធី",
+   "gender": "M",
+   "school": "វិ.ស្ទឹងសែន",
+   "province": "kampong-thom"
+  },
+  {
+   "grade": 12,
+   "subject": "khmer",
+   "rank": 5,
+   "name": "រ័ត្ន ណារ៉ុង",
+   "gender": "M",
+   "school": "វិ.ព្រះមុនីវង្ស",
+   "province": "battambang"
+  },
+  {
+   "grade": 12,
+   "subject": "khmer",
+   "rank": 6,
+   "name": "លី សុខុម",
+   "gender": "F",
+   "school": "វិ.ប៊ែលធីអន្តរជាតិទី ៩",
+   "province": "phnom-penh"
+  },
+  {
+   "grade": 12,
+   "subject": "khmer",
+   "rank": 7,
+   "name": "ជិម សុផល",
+   "gender": "M",
+   "school": "វិ.ជ័យវរ្ម័នទី៧",
+   "province": "kandal"
+  },
+  {
+   "grade": 12,
+   "subject": "khmer",
+   "rank": 8,
+   "name": "ងួន តៃលាង",
+   "gender": "M",
+   "school": "វិ.បឋម មេមត់",
+   "province": "tbong-khmum"
+  },
+  {
+   "grade": 12,
+   "subject": "khmer",
+   "rank": 9,
+   "name": "នុំ រីដា",
+   "gender": "F",
+   "school": "វិ.មាស ឡាក់កណ្តាល",
+   "province": "kandal"
+  },
+  {
+   "grade": 12,
+   "subject": "khmer",
+   "rank": 10,
+   "name": "ឃាន សាដែន",
+   "gender": "M",
+   "school": "វិ.មង្គលបូរី",
+   "province": "banteay-meanchey"
+  },
+  {
+   "grade": 12,
    "subject": "math",
    "rank": 1,
    "name": "ជេត ឆវីវណ្ណ",
@@ -48,12 +135,426 @@
   },
   {
    "grade": 12,
+   "subject": "math",
+   "rank": 2,
+   "name": "យាន សោភា",
+   "gender": "F",
+   "school": "វិ.អម្ពវ័ន",
+   "province": "kandal"
+  },
+  {
+   "grade": 12,
+   "subject": "math",
+   "rank": 3,
+   "name": "សន លីដា",
+   "gender": "M",
+   "school": "វិ.សហគមន៍ អង្គតាសោម",
+   "province": "takeo"
+  },
+  {
+   "grade": 12,
+   "subject": "math",
+   "rank": 4,
+   "name": "ដួង ចក្រី",
+   "gender": "M",
+   "school": "វិ.ព្រះអង្គឌួង",
+   "province": "prey-veng"
+  },
+  {
+   "grade": 12,
+   "subject": "math",
+   "rank": 5,
+   "name": "រ៉ានី ពណ្ណរាជ",
+   "gender": "M",
+   "school": "វិ.ព្រះស៊ីសុវត្ថិ",
+   "province": "phnom-penh"
+  },
+  {
+   "grade": 12,
+   "subject": "math",
+   "rank": 6,
+   "name": "លាង ចាន់ដា",
+   "gender": "F",
+   "school": "វិ.មាស ប្រូកាប",
+   "province": "takeo"
+  },
+  {
+   "grade": 12,
+   "subject": "math",
+   "rank": 7,
+   "name": "លី សិរីវិវឌ្ឍន៍",
+   "gender": "F",
+   "school": "វិ.សហគមន៍ ស្ទឹង",
+   "province": "kampong-cham"
+  },
+  {
+   "grade": 12,
+   "subject": "math",
+   "rank": 8,
+   "name": "ហួន លំហួរ",
+   "gender": "M",
+   "school": "វិ.បាក់ទូក",
+   "province": "phnom-penh"
+  },
+  {
+   "grade": 12,
+   "subject": "math",
+   "rank": 9,
+   "name": "យិន ចំណូល",
+   "gender": "M",
+   "school": "វិ.ព្រះនរោត្តមរណឫទ្ធិ",
+   "province": "kampot"
+  },
+  {
+   "grade": 12,
+   "subject": "math",
+   "rank": 10,
+   "name": "អាន តាន់",
+   "gender": "M",
+   "school": "វិ.ជ្រៃអំបិល",
+   "province": "koh-kong"
+  },
+  {
+   "grade": 12,
    "subject": "physics",
    "rank": 1,
    "name": "លី សុកញ្ញា",
    "gender": "F",
    "school": "វិ.ព្រះមុនីវង្ស",
    "province": "battambang"
+  },
+  {
+   "grade": 12,
+   "subject": "physics",
+   "rank": 2,
+   "name": "សួន សុវឌ្ឍនា",
+   "gender": "M",
+   "school": "វិ.ព្រះសីហនុ",
+   "province": "kampong-cham"
+  },
+  {
+   "grade": 12,
+   "subject": "physics",
+   "rank": 3,
+   "name": "ឈិវ សំសាង",
+   "gender": "M",
+   "school": "វិ.មាស សោភ័ណ",
+   "province": "kandal"
+  },
+  {
+   "grade": 12,
+   "subject": "physics",
+   "rank": 4,
+   "name": "ពេជ្ជ ដេវីដ",
+   "gender": "M",
+   "school": "វិ.ព្រះបាទសុរាម្រឹត",
+   "province": "kampong-chhnang"
+  },
+  {
+   "grade": 12,
+   "subject": "physics",
+   "rank": 5,
+   "name": "ចាន់ ពិចិត្រ",
+   "gender": "M",
+   "school": "វិ.ព្រះបាទសុរាម្រឹត",
+   "province": "kampong-chhnang"
+  },
+  {
+   "grade": 12,
+   "subject": "physics",
+   "rank": 6,
+   "name": "វុន វាសនា",
+   "gender": "M",
+   "school": "វិ.ឯកជនគឹមហៀប",
+   "province": "phnom-penh"
+  },
+  {
+   "grade": 12,
+   "subject": "physics",
+   "rank": 7,
+   "name": "គឹម គីណាល់",
+   "gender": "M",
+   "school": "វិ.បាក់ទូក",
+   "province": "phnom-penh"
+  },
+  {
+   "grade": 12,
+   "subject": "physics",
+   "rank": 8,
+   "name": "ភួង សុដានីត",
+   "gender": "M",
+   "school": "វិ.ជល សុវត្ថិ",
+   "province": "takeo"
+  },
+  {
+   "grade": 12,
+   "subject": "physics",
+   "rank": 9,
+   "name": "សៅ សុខឡេង",
+   "gender": "M",
+   "school": "វិ.ថ្មីមាស",
+   "province": "kandal"
+  },
+  {
+   "grade": 12,
+   "subject": "physics",
+   "rank": 10,
+   "name": "វេន សុខពេជ្រ",
+   "gender": "M",
+   "school": "វិ.មាស ឡាក់កណ្តាល",
+   "province": "kandal"
+  },
+  {
+   "grade": 9,
+   "subject": "khmer",
+   "rank": 1,
+   "name": "ថន សុដាវណ្ណ",
+   "gender": "F",
+   "school": "វិ.បាក់ទូក",
+   "province": "phnom-penh"
+  },
+  {
+   "grade": 9,
+   "subject": "khmer",
+   "rank": 2,
+   "name": "ចក ទិតមុនីនាថ",
+   "gender": "F",
+   "school": "វិ.បាក់ទូក",
+   "province": "phnom-penh"
+  },
+  {
+   "grade": 9,
+   "subject": "khmer",
+   "rank": 3,
+   "name": "គី និនិរាជ",
+   "gender": "M",
+   "school": "អនុ.បែកចាន",
+   "province": "kandal"
+  },
+  {
+   "grade": 9,
+   "subject": "khmer",
+   "rank": 4,
+   "name": "ណុប គីមលេង",
+   "gender": "M",
+   "school": "អនុ.ហ៊ុនសែន អង្គតាសោម",
+   "province": "takeo"
+  },
+  {
+   "grade": 9,
+   "subject": "khmer",
+   "rank": 5,
+   "name": "ស៊ន ស្រីលីន",
+   "gender": "F",
+   "school": "អនុ.វ.អង្គតាសោម",
+   "province": "takeo"
+  },
+  {
+   "grade": 9,
+   "subject": "khmer",
+   "rank": 6,
+   "name": "រដ្ឋា ធីតា",
+   "gender": "F",
+   "school": "អនុ.ព្រះសីហនុរាជ",
+   "province": "kandal"
+  },
+  {
+   "grade": 9,
+   "subject": "khmer",
+   "rank": 7,
+   "name": "មួយ លាស់",
+   "gender": "F",
+   "school": "វិ.សហគមន៍ អូរអំបិល",
+   "province": "banteay-meanchey"
+  },
+  {
+   "grade": 9,
+   "subject": "khmer",
+   "rank": 8,
+   "name": "ឆាយ ច័ន្ទសាវិទ្ធិ",
+   "gender": "M",
+   "school": "វិ.២៧ មករា",
+   "province": "kampong-thom"
+  },
+  {
+   "grade": 9,
+   "subject": "khmer",
+   "rank": 9,
+   "name": "លី ដាណា",
+   "gender": "F",
+   "school": "វិ.ព្រះមុនីវង្ស",
+   "province": "battambang"
+  },
+  {
+   "grade": 9,
+   "subject": "khmer",
+   "rank": 10,
+   "name": "ណេរ៉ុន បញ្ញវត្តី",
+   "gender": "F",
+   "school": "វិ.១០ មករា ១៩៧៩",
+   "province": "siem-reap"
+  },
+  {
+   "grade": 9,
+   "subject": "math",
+   "rank": 1,
+   "name": "ឈី ស៊ាវហ៊ូយ",
+   "gender": "F",
+   "school": "វិ.បាក់ទូក",
+   "province": "phnom-penh"
+  },
+  {
+   "grade": 9,
+   "subject": "math",
+   "rank": 2,
+   "name": "ម៉េង តិចហៀង",
+   "gender": "F",
+   "school": "វិ.អន្តរទ្វីបអាមេរិកាំង",
+   "province": "phnom-penh"
+  },
+  {
+   "grade": 9,
+   "subject": "math",
+   "rank": 3,
+   "name": "ប៊ុនលី ទំប៉ោ",
+   "gender": "M",
+   "school": "វិ.មាស បណ្ឌិត",
+   "province": "kampong-thom"
+  },
+  {
+   "grade": 9,
+   "subject": "math",
+   "rank": 4,
+   "name": "អ៊ាង សុគន្ធា",
+   "gender": "F",
+   "school": "វិ.អន្តរជាតិសិង្ហបុរី",
+   "province": "phnom-penh"
+  },
+  {
+   "grade": 9,
+   "subject": "math",
+   "rank": 5,
+   "name": "សុភី ពិសិដ្ឋ",
+   "gender": "M",
+   "school": "អនុ.សោភ័ណ",
+   "province": "battambang"
+  },
+  {
+   "grade": 9,
+   "subject": "math",
+   "rank": 6,
+   "name": "ឆាយ លីហ្សា",
+   "gender": "F",
+   "school": "វិ.នេតយ៉ង់",
+   "province": "battambang"
+  },
+  {
+   "grade": 9,
+   "subject": "math",
+   "rank": 7,
+   "name": "ហែម សុធីវុត",
+   "gender": "M",
+   "school": "វិ.ព្រះសីហនុ",
+   "province": "kampong-cham"
+  },
+  {
+   "grade": 9,
+   "subject": "math",
+   "rank": 8,
+   "name": "ហាក់ សុដាវណ្ណ",
+   "gender": "M",
+   "school": "វិ.ព្រះសីហនុ",
+   "province": "kampong-cham"
+  },
+  {
+   "grade": 9,
+   "subject": "math",
+   "rank": 9,
+   "name": "ហ៊ាង ស៊ាងហួរ",
+   "gender": "M",
+   "school": "វិ.ទួលទំពូង",
+   "province": "phnom-penh"
+  },
+  {
+   "grade": 9,
+   "subject": "math",
+   "rank": 10,
+   "name": "ឈុន សៀវម៉ី",
+   "gender": "F",
+   "school": "វិ.ព្រះបាទសុរាម្រឹត",
+   "province": "kampong-chhnang"
+  },
+  {
+   "grade": 9,
+   "subject": "physics",
+   "rank": 1,
+   "name": "ថុង ចាន់រស្មី",
+   "gender": "M",
+   "school": "អនុ.សួងថ្មី",
+   "province": "kampong-cham"
+  },
+  {
+   "grade": 9,
+   "subject": "physics",
+   "rank": 2,
+   "name": "មាស សុជាតា",
+   "gender": "F",
+   "school": "វិ.ព្រះបាទសុរាម្រឹត",
+   "province": "kampong-chhnang"
+  },
+  {
+   "grade": 9,
+   "subject": "physics",
+   "rank": 3,
+   "name": "ចន្ទ ជីវិត្រកាល",
+   "gender": "F",
+   "school": "វិ.មង្គលបូរី",
+   "province": "banteay-meanchey"
+  },
+  {
+   "grade": 9,
+   "subject": "physics",
+   "rank": 4,
+   "name": "អ៊ា សំធារ",
+   "gender": "M",
+   "school": "វិ.អន្តរជាតិហ្សាម៉ាន់",
+   "province": "phnom-penh"
+  },
+  {
+   "grade": 9,
+   "subject": "physics",
+   "rank": 5,
+   "name": "លី សុខសេដ្ឋា",
+   "gender": "M",
+   "school": "វិ.បាក់ទូក",
+   "province": "phnom-penh"
+  },
+  {
+   "grade": 9,
+   "subject": "physics",
+   "rank": 6,
+   "name": "ចក់ ចាន់មុន្នីរ័ត្ន",
+   "gender": "M",
+   "school": "វិ.ព្រះមុនីវង្ស",
+   "province": "battambang"
+  },
+  {
+   "grade": 9,
+   "subject": "physics",
+   "rank": 7,
+   "name": "រស់ ច័ន្ទថុនា",
+   "gender": "M",
+   "school": "វិ.មាស បណ្ឌិត",
+   "province": "preah-sihanouk"
+  },
+  {
+   "grade": 9,
+   "subject": "physics",
+   "rank": 8,
+   "name": "អេង សុនគីម",
+   "gender": "F",
+   "school": "វិ.ព្រះបាទសុរាម្រឹត",
+   "province": "kampong-chhnang"
   }
  ]
 }

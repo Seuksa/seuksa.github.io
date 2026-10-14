@@ -1,0 +1,59 @@
+﻿grade,subject,rank,name,gender,school,province
+12,khmer,1,គង់ រតនាធិតា,F,វិ.ប៊ែលធីអន្តរជាតិទី ៥,phnom-penh
+12,khmer,2,ច័ន្ទ រតនាភា,F,វិ.ពោធិ៍សាត់,pursat
+12,khmer,3,ចេង ស៊ាងណៃ,F,វិ.អង្គរ,siem-reap
+12,khmer,4,នេន ចន្ធី,M,វិ.ស្ទឹងសែន,kampong-thom
+12,khmer,5,រ័ត្ន ណារ៉ុង,M,វិ.ព្រះមុនីវង្ស,battambang
+12,khmer,6,លី សុខុម,F,វិ.ប៊ែលធីអន្តរជាតិទី ៩,phnom-penh
+12,khmer,7,ជិម សុផល,M,វិ.ជ័យវរ្ម័នទី៧,kandal
+12,khmer,8,ងួន តៃលាង,M,វិ.បឋម មេមត់,tbong-khmum
+12,khmer,9,នុំ រីដា,F,វិ.មាស ឡាក់កណ្តាល,kandal
+12,khmer,10,ឃាន សាដែន,M,វិ.មង្គលបូរី,banteay-meanchey
+12,math,1,ដេត ឆរីវណ្ណ,F,វិ.កំពង់ស្ពឺ,kampong-speu
+12,math,2,យាន សោភា,F,វិ.អម្ពវ័ន,kandal
+12,math,3,សន លីដា,M,វិ.សហគមន៍ អង្គតាសោម,takeo
+12,math,4,ដួង ចក្រី,M,វិ.ព្រះអង្គឌួង,prey-veng
+12,math,5,រ៉ានី ពណ្ណរាជ,M,វិ.ព្រះស៊ីសុវត្ថិ,phnom-penh
+12,math,6,លាង ចាន់ដា,F,វិ.មាស ប្រូកាប,takeo
+12,math,7,លី សិរីវិវឌ្ឍន៍,F,វិ.សហគមន៍ ស្ទឹង,kampong-cham
+12,math,8,ហួន លំហួរ,M,វិ.បាក់ទូក,phnom-penh
+12,math,9,យិន ចំណូល,M,វិ.ព្រះនរោត្តមរណឫទ្ធិ,kampot
+12,math,10,អាន តាន់,M,វិ.ជ្រៃអំបិល,koh-kong
+12,physics,1,លី សុកញ្ញា,F,វិ.ព្រះមុនីវង្ស,battambang
+12,physics,2,សួន សុវឌ្ឍនា,M,វិ.ព្រះសីហនុ,kampong-cham
+12,physics,3,ឈិវ សំសាង,M,វិ.មាស សោភ័ណ,kandal
+12,physics,4,ពេជ្ជ ដេវីដ,M,វិ.ព្រះបាទសុរាម្រឹត,kampong-chhnang
+12,physics,5,ចាន់ ពិចិត្រ,M,វិ.ព្រះបាទសុរាម្រឹត,kampong-chhnang
+12,physics,6,វុន វាសនា,M,វិ.ឯកជនគឹមហៀប,phnom-penh
+12,physics,7,គឹម គីណាល់,M,វិ.បាក់ទូក,phnom-penh
+12,physics,8,ភួង សុដានីត,M,វិ.ជល សុវត្ថិ,takeo
+12,physics,9,សៅ សុខឡេង,M,វិ.ថ្មីមាស,kandal
+12,physics,10,វេន សុខពេជ្រ,M,វិ.មាស ឡាក់កណ្តាល,kandal
+9,khmer,1,ថន សុដាវណ្ណ,F,វិ.បាក់ទូក,phnom-penh
+9,khmer,2,ចក ទិតមុនីនាថ,F,វិ.បាក់ទូក,phnom-penh
+9,khmer,3,គី និនិរាជ,M,អនុ.បែកចាន,kandal
+9,khmer,4,ណុប គីមលេង,M,អនុ.ហ៊ុនសែន អង្គតាសោម,takeo
+9,khmer,5,ស៊ន ស្រីលីន,F,អនុ.វ.អង្គតាសោម,takeo
+9,khmer,6,រដ្ឋា ធីតា,F,អនុ.ព្រះសីហនុរាជ,kandal
+9,khmer,7,មួយ លាស់,F,វិ.សហគមន៍ អូរអំបិល,banteay-meanchey
+9,khmer,8,ឆាយ ច័ន្ទសាវិទ្ធិ,M,វិ.២៧ មករា,kampong-thom
+9,khmer,9,លី ដាណា,F,វិ.ព្រះមុនីវង្ស,battambang
+9,khmer,10,ណេរ៉ុន បញ្ញវត្តី,F,វិ.១០ មករា ១៩៧៩,siem-reap
+9,math,1,ឈី ស៊ាវហ៊ូយ,F,វិ.បាក់ទូក,phnom-penh
+9,math,2,ម៉េង តិចហៀង,F,វិ.អន្តរទ្វីបអាមេរិកាំង,phnom-penh
+9,math,3,ប៊ុនលី ទំប៉ោ,M,វិ.មាស បណ្ឌិត,kampong-thom
+9,math,4,អ៊ាង សុគន្ធា,F,វិ.អន្តរជាតិសិង្ហបុរី,phnom-penh
+9,math,5,សុភី ពិសិដ្ឋ,M,អនុ.សោភ័ណ,battambang
+9,math,6,ឆាយ លីហ្សា,F,វិ.នេតយ៉ង់,battambang
+9,math,7,ហែម សុធីវុត,M,វិ.ព្រះសីហនុ,kampong-cham
+9,math,8,ហាក់ សុដាវណ្ណ,M,វិ.ព្រះសីហនុ,kampong-cham
+9,math,9,ហ៊ាង ស៊ាងហួរ,M,វិ.ទួលទំពូង,phnom-penh
+9,math,10,ឈុន សៀវម៉ី,F,វិ.ព្រះបាទសុរាម្រឹត,kampong-chhnang
+9,physics,1,ថុង ចាន់រស្មី,M,អនុ.សួងថ្មី,kampong-cham
+9,physics,2,មាស សុជាតា,F,វិ.ព្រះបាទសុរាម្រឹត,kampong-chhnang
+9,physics,3,ចន្ទ ជីវិត្រកាល,F,វិ.មង្គលបូរី,banteay-meanchey
+9,physics,4,អ៊ា សំធារ,M,វិ.អន្តរជាតិហ្សាម៉ាន់,phnom-penh
+9,physics,5,លី សុខសេដ្ឋា,M,វិ.បាក់ទូក,phnom-penh
+9,physics,6,ចក់ ចាន់មុន្នីរ័ត្ន,M,វិ.ព្រះមុនីវង្ស,battambang
+9,physics,7,រស់ ច័ន្ទថុនា,M,វិ.មាស បណ្ឌិត,preah-sihanouk
+9,physics,8,អេង សុនគីម,F,វិ.ព្រះបាទសុរាម្រឹត,kampong-chhnang

@@ -24,6 +24,10 @@ const h = (year: number, grade: Grade, subject: Subject, rank: number): HonourRe
 
 const LINKS: Link[] = [
   // IMO
+  { competition: 'IMO', name: 'Sothiroth Hem', honours: [h(2014, 9, 'math', 7)], possible: true }, // ហែម សុធីវុត
+  { competition: 'IMO', name: 'Techheang Meng', honours: [h(2014, 9, 'math', 2)] },
+  { competition: 'IMO', name: 'Sodavann Hak', honours: [h(2014, 9, 'math', 8)] },
+  { competition: 'IMO', name: 'Sivmey Chhun', honours: [h(2014, 9, 'math', 10)] },
   { competition: 'IMO', name: 'Sovannit Oun', honours: [h(2013, 9, 'math', 2)] },
   { competition: 'IMO', name: 'Sothea Saren', honours: [h(2013, 9, 'math', 3), h(2016, 12, 'math', 5)] },
   { competition: 'IMO', name: 'Seavmey Chip', honours: [h(2013, 9, 'math', 4)] },
@@ -46,6 +50,12 @@ const LINKS: Link[] = [
   { competition: 'IPhO', name: 'Ny Vannat', honours: [h(2011, 12, 'physics', 1)] },
   { competition: 'IPhO', name: 'Sopheak Sorn', honours: [h(2011, 12, 'physics', 2)] },
   { competition: 'IPhO', name: 'Sokanha Ly', honours: [h(2014, 12, 'physics', 1)] },
+  { competition: 'IPhO', name: 'Pichet Chan', honours: [h(2014, 12, 'physics', 5)] },
+  { competition: 'IPhO', name: 'Sovathana Soun', honours: [h(2014, 12, 'physics', 2)] },
+  { competition: 'IPhO', name: 'David Pich', honours: [h(2014, 12, 'physics', 4)] },
+  { competition: 'IPhO', name: 'Chanmonirath Chak', honours: [h(2014, 9, 'physics', 6)] },
+  { competition: 'IPhO', name: 'Chivi Throkal Chan', honours: [h(2014, 9, 'physics', 3)] },
+  { competition: 'IPhO', name: 'Socheata Meas', honours: [h(2014, 9, 'physics', 2)] },
   { competition: 'IPhO', name: 'Sin Rithy Vong', honours: [h(2018, 12, 'physics', 5)] },
   { competition: 'IPhO', name: 'Panhaudom Nget', honours: [h(2026, 12, 'physics', 5)] },
 ];
