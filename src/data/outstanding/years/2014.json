@@ -1,0 +1,59 @@
+{
+ "year": 2014,
+ "resultsDate": "6–7 Apr 2014",
+ "host": "Preah Sihanouk province",
+ "ranksPerSubject": 10,
+ "transcribedFrom": "text",
+ "verified": false,
+ "note": "Partial: only the three grade 12 gold medallists (rank 1) are recorded, from the text report. The full official list exists only as low-resolution phone photos (archived) that are too blurred to transcribe reliably. Girls won 11 of the 18 medals this year.",
+ "sources": [
+  {
+   "title": "ជយលាភីសិស្សពូកែមេដាយមាស គណិតវិទ្យា រូបវិទ្យា អក្សរសាស្រ្តខ្មែរ ២០១៤",
+   "publisher": "cambomaths.wordpress.com",
+   "date": "2014-04-08",
+   "url": "https://cambomaths.wordpress.com/2014/04/08/%e1%9e%87%e1%9e%99%e1%9e%9b%e1%9e%b6%e1%9e%97%e1%9e%b8%e1%9e%9f%e1%9e%b7%e1%9e%9f%e1%9f%92%e1%9e%9f%e1%9e%96%e1%9e%bc%e1%9e%80%e1%9f%82%e1%9e%98%e1%9f%81%e1%9e%8a%e1%9e%b6%e1%9e%99%e1%9e%98%e1%9e%b6/"
+  },
+  {
+   "title": "លទ្ធផលសិស្សពូកែទូទាំងប្រទេសថ្នាក់ទី៩-១២ ២០១៤ (photos of the official list, 6 Apr 2014)",
+   "publisher": "MoEYS list, photographed and posted by cambomaths.wordpress.com",
+   "date": "2014-04-07",
+   "url": "https://cambomaths.wordpress.com/2014/04/07/%E1%9E%9B%E1%9E%91%E1%9F%92%E1%9E%92%E1%9E%95%E1%9E%9B%E1%9E%9F%E1%9E%B7%E1%9E%9F%E1%9F%92%E1%9E%9F%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%82%E1%9E%91%E1%9E%BC%E1%9E%91%E1%9E%B6%E1%9F%86%E1%9E%84%E1%9E%94/",
+   "archive": "/archive/outstanding/2014/cambomaths-2014-1.jpg"
+  },
+  {
+   "title": "Grade 12 list photo (archived copy)",
+   "publisher": "MoEYS list",
+   "date": "2014-04-06",
+   "archive": "/archive/outstanding/2014/cambomaths-2014-2.jpg"
+  }
+ ],
+ "entries": [
+  {
+   "grade": 12,
+   "subject": "khmer",
+   "rank": 1,
+   "name": "គង់ រតនធីតា",
+   "gender": "F",
+   "school": "វិ.ប៊ែលធីអន្តរជាតិទី៥",
+   "province": "phnom-penh"
+  },
+  {
+   "grade": 12,
+   "subject": "math",
+   "rank": 1,
+   "name": "ជេត ឆវីវណ្ណ",
+   "gender": "F",
+   "school": "វិ.កំពង់ស្ពឺ",
+   "province": "kampong-speu"
+  },
+  {
+   "grade": 12,
+   "subject": "physics",
+   "rank": 1,
+   "name": "លី សុកញ្ញា",
+   "gender": "F",
+   "school": "វិ.ព្រះមុនីវង្ស",
+   "province": "battambang"
+  }
+ ]
+}

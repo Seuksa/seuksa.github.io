@@ -1,0 +1,205 @@
+{
+ "year": 2011,
+ "resultsDate": "Apr 2011",
+ "ranksPerSubject": 10,
+ "transcribedFrom": "image",
+ "verified": false,
+ "note": "Partial: grade 12 mathematics and physics only, from tables re-typed by a blogger from the MoEYS results (Khmer literature and grade 9 were not posted). Grade inferred from the birth years (1993–94) in the tables.",
+ "sources": [
+  {
+   "title": "លទ្ធផលប្រឡងជ្រើសរើសសិស្សពូកែទូទាំងប្រទេសឆ្នាំ ២០១១",
+   "publisher": "Mblackstar blog (keoserey.wordpress.com), re-typed from the MoEYS results",
+   "date": "2011-04-09",
+   "url": "https://keoserey.wordpress.com/2011/04/09/%E1%9E%9B%E1%9E%91%E1%9F%92%E1%9E%92%E1%9E%95%E1%9E%9B%E1%9E%94%E1%9F%92%E1%9E%9A%E1%9E%A1%E1%9E%84%E1%9E%87%E1%9F%92%E1%9E%9A%E1%9E%BE%E1%9E%9F%E1%9E%9A%E1%9E%BE%E1%9E%9F%E1%9E%9F%E1%9E%B7%E1%9E%9F/",
+   "archive": "/archive/outstanding/2011/keoserey-2011-math.png"
+  },
+  {
+   "title": "Physics table (archived copy)",
+   "publisher": "Mblackstar blog",
+   "date": "2011-04-09",
+   "archive": "/archive/outstanding/2011/keoserey-2011-physics.png"
+  }
+ ],
+ "entries": [
+  {
+   "grade": 12,
+   "subject": "math",
+   "rank": 1,
+   "name": "ស្រ៊ិន សុវណ្ណារ៉ា",
+   "gender": "M",
+   "school": "វិ.បាក់ទូក",
+   "province": "phnom-penh"
+  },
+  {
+   "grade": 12,
+   "subject": "math",
+   "rank": 2,
+   "name": "ដោ ប៉េងហុក",
+   "gender": "M",
+   "school": "វិ.បាក់ទូក",
+   "province": "phnom-penh"
+  },
+  {
+   "grade": 12,
+   "subject": "math",
+   "rank": 3,
+   "name": "តាំង ហាំងឡេង",
+   "gender": "M",
+   "school": "វិ.ព្រះមុនីវង្ស",
+   "province": "battambang"
+  },
+  {
+   "grade": 12,
+   "subject": "math",
+   "rank": 4,
+   "name": "គីម ហេង",
+   "gender": "M",
+   "school": "វិ.ហ៊ុនសែនសេរីភាព",
+   "province": "kandal"
+  },
+  {
+   "grade": 12,
+   "subject": "math",
+   "rank": 5,
+   "name": "សុខ ពិសី",
+   "gender": "M",
+   "school": "វិ.ជាស៊ីមសាមគ្គី",
+   "province": "phnom-penh"
+  },
+  {
+   "grade": 12,
+   "subject": "math",
+   "rank": 6,
+   "name": "ហេង ធរនិទ្ធ",
+   "gender": "M",
+   "school": "វិ.បាក់ទូក",
+   "province": "phnom-penh"
+  },
+  {
+   "grade": 12,
+   "subject": "math",
+   "rank": 7,
+   "name": "រិទ្ធ រតនៈ",
+   "gender": "M",
+   "school": "វិ.ជាស៊ីមសាមគ្គី",
+   "province": "phnom-penh"
+  },
+  {
+   "grade": 12,
+   "subject": "math",
+   "rank": 8,
+   "name": "គឹម សីហា",
+   "gender": "M",
+   "school": "វិ.សុខអាន១ឧសភា",
+   "province": "takeo"
+  },
+  {
+   "grade": 12,
+   "subject": "math",
+   "rank": 9,
+   "name": "ឌឿន រិនដា",
+   "gender": "M",
+   "school": "វិ.ព្រះបាទនរោត្តម",
+   "province": "prey-veng"
+  },
+  {
+   "grade": 12,
+   "subject": "math",
+   "rank": 10,
+   "name": "តាំង មុនីរាជ",
+   "gender": "M",
+   "school": "វិ.បាក់ទូក",
+   "province": "phnom-penh"
+  },
+  {
+   "grade": 12,
+   "subject": "physics",
+   "rank": 1,
+   "name": "នី វណ្ណាត",
+   "gender": "M",
+   "school": "វិ.អង្គរ",
+   "province": "siem-reap"
+  },
+  {
+   "grade": 12,
+   "subject": "physics",
+   "rank": 2,
+   "name": "សិន សុភ័ក្រ",
+   "gender": "M",
+   "school": "វិ.អនុវត្ត",
+   "province": "phnom-penh"
+  },
+  {
+   "grade": 12,
+   "subject": "physics",
+   "rank": 3,
+   "name": "សឹម រិទ្ធី",
+   "gender": "M",
+   "school": "វិ.ទួលទំពូង",
+   "province": "phnom-penh"
+  },
+  {
+   "grade": 12,
+   "subject": "physics",
+   "rank": 4,
+   "name": "លី ស៊ាម",
+   "gender": "F",
+   "school": "វិ.សត.ហសស្ទួង",
+   "province": "kampong-cham"
+  },
+  {
+   "grade": 12,
+   "subject": "physics",
+   "rank": 5,
+   "name": "អូយ ថៃលី",
+   "gender": "M",
+   "school": "វិ.ហស កោះធំ",
+   "province": "kandal"
+  },
+  {
+   "grade": 12,
+   "subject": "physics",
+   "rank": 6,
+   "name": "គីម ពេជ្រហង្សា",
+   "gender": "M",
+   "school": "វិ.ឥន្ទ្រទេវី",
+   "province": "phnom-penh"
+  },
+  {
+   "grade": 12,
+   "subject": "physics",
+   "rank": 7,
+   "name": "ស៊ុន ណៃស៊ាង",
+   "gender": "F",
+   "school": "វិ.សត.ហសស្ទួង",
+   "province": "kampong-cham"
+  },
+  {
+   "grade": 12,
+   "subject": "physics",
+   "rank": 8,
+   "name": "ចេង បូរិទ្ធ",
+   "gender": "M",
+   "school": "វិ.នរ.ឫទ្ធិតន្តប្រជ្ញា",
+   "province": "kampong-cham"
+  },
+  {
+   "grade": 12,
+   "subject": "physics",
+   "rank": 9,
+   "name": "គឹម ស៊ីណុច",
+   "gender": "M",
+   "school": "វិ.សម្តេចអគ្គ.អង្គតាសោម",
+   "province": "takeo"
+  },
+  {
+   "grade": 12,
+   "subject": "physics",
+   "rank": 10,
+   "name": "សារ៉េន សារ៉ាឌី",
+   "gender": "M",
+   "school": "វិ.ព្រះបាទសុរាម្រិត",
+   "province": "kampong-chhnang"
+  }
+ ]
+}

@@ -95,3 +95,12 @@ and `public/CNAME`, which is copied into the build).
 
 The old sub-domains (blog., quote., story., answer.seuksa.com …) are not served by this site; their content now
 lives under `/blog/`, `/quotes/`, `/stories/` and `/answers/`.
+
+## Source archive
+
+Every statistic and honour-roll entry cites its source (original link). Backups are kept two ways:
+
+- **`public/archive/`** – copies of official MoEYS documents (decree images / PDFs) used for the outstanding-students
+  honour roll. These are published with the site and linked as “archived copy” next to the original source.
+- **`archive/sources/`** – local HTML snapshots of the news articles we cite (copyrighted, so git-ignored and not
+  published). Keep this folder backed up with the project.

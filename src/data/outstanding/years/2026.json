@@ -1,0 +1,297 @@
+{
+ "year": 2026,
+ "examDate": "26 Apr 2026",
+ "resultsDate": "30 Apr 2026",
+ "host": "Phnom Penh",
+ "ranksPerSubject": 5,
+ "transcribedFrom": "image",
+ "verified": false,
+ "note": "Pages of the official MoEYS decree (footer “ប្រកាសជ័យលាភីសិស្សពូកែទូទាំងប្រទេសឆ្នាំ២០២៦”, initialled), photographed and posted by the exam-news page បាក់ឌុបមកដល់ហើយ. 30 honourees from 13 provinces, matching press reports.",
+ "sources": [
+  {
+   "title": "#លទ្ធផលសិស្សពូកែទូទាំងប្រទេស២០២៦ (decree pages, grade 9 and grade 12)",
+   "publisher": "MoEYS decree, reposted by the Facebook page បាក់ឌុបមកដល់ហើយ",
+   "date": "2026-04-30",
+   "url": "https://www.facebook.com/moeysbacll/posts/972122851997720/",
+   "archive": "/archive/outstanding/2026/moeys-decree-2026-grade12.jpg"
+  },
+  {
+   "title": "Decree – grade 9 list (archived copy)",
+   "publisher": "MoEYS",
+   "date": "2026-04-30",
+   "archive": "/archive/outstanding/2026/moeys-decree-2026-grade9.jpg"
+  }
+ ],
+ "entries": [
+  {
+   "grade": 12,
+   "subject": "khmer",
+   "rank": 1,
+   "name": "រស់ ដា",
+   "gender": "F",
+   "school": "វិ.ហស ពងទឹក",
+   "province": "svay-rieng"
+  },
+  {
+   "grade": 12,
+   "subject": "khmer",
+   "rank": 2,
+   "name": "សំបូរ ដាណេត",
+   "gender": "F",
+   "school": "វិ.មោងឫស្សី",
+   "province": "battambang"
+  },
+  {
+   "grade": 12,
+   "subject": "khmer",
+   "rank": 3,
+   "name": "ហៀង លីហ្សា",
+   "gender": "F",
+   "school": "វិ.ព្រះបាទសុរាម្រឹត",
+   "province": "kampong-chhnang"
+  },
+  {
+   "grade": 12,
+   "subject": "khmer",
+   "rank": 4,
+   "name": "ឡៃ កន្និកា",
+   "gender": "F",
+   "school": "វិ.ព្រៃព្នៅ",
+   "province": "prey-veng"
+  },
+  {
+   "grade": 12,
+   "subject": "khmer",
+   "rank": 5,
+   "name": "ងួន សៀវម៉ី",
+   "gender": "F",
+   "school": "វិ.១០ មករា ១៩៧៩",
+   "province": "siem-reap"
+  },
+  {
+   "grade": 12,
+   "subject": "math",
+   "rank": 1,
+   "name": "ថន វិនសុភៈ",
+   "gender": "M",
+   "school": "វិ.ព្រៃដើមថ្នឹង",
+   "province": "prey-veng"
+  },
+  {
+   "grade": 12,
+   "subject": "math",
+   "rank": 2,
+   "name": "នន់ សុវណ្ណារ៉ុត",
+   "gender": "M",
+   "school": "វិ.ហស អង្គប្រីយ៍",
+   "province": "takeo"
+  },
+  {
+   "grade": 12,
+   "subject": "math",
+   "rank": 3,
+   "name": "សួងហាន ឫទ្ធីសក្តិ",
+   "gender": "M",
+   "school": "វិ.ព្រះបាទសុរាម្រឹត",
+   "province": "kampong-chhnang"
+  },
+  {
+   "grade": 12,
+   "subject": "math",
+   "rank": 4,
+   "name": "ស្រី គឹមយូ",
+   "gender": "M",
+   "school": "សាលារៀនអារីហ្សូន សាខាកំពង់ធំ",
+   "province": "kampong-thom"
+  },
+  {
+   "grade": 12,
+   "subject": "math",
+   "rank": 5,
+   "name": "ម៉ឹង រចនា",
+   "gender": "F",
+   "school": "វិ.សអតហស ព្រែកតាទែន",
+   "province": "kandal"
+  },
+  {
+   "grade": 12,
+   "subject": "physics",
+   "rank": 1,
+   "name": "ស៊ឹម មុយឈីវ",
+   "gender": "M",
+   "school": "សាលាអន្តរជាតិវេស្ទលែនដ៍",
+   "province": "kandal"
+  },
+  {
+   "grade": 12,
+   "subject": "physics",
+   "rank": 2,
+   "name": "សេង លីស៊ីញ",
+   "gender": "M",
+   "school": "វិ.ព្រះស៊ីសុវត្ថិ",
+   "province": "phnom-penh"
+  },
+  {
+   "grade": 12,
+   "subject": "physics",
+   "rank": 3,
+   "name": "ស៊ិត ផាវី",
+   "gender": "F",
+   "school": "វិ.ហស រលាប្អៀរ",
+   "province": "kampong-chhnang"
+  },
+  {
+   "grade": 12,
+   "subject": "physics",
+   "rank": 4,
+   "name": "ឡាយ ប៊ុយមៀវ",
+   "gender": "F",
+   "school": "សាលារៀនវ៉េសឡាញន៍ (ច្បារអំពៅ)",
+   "province": "phnom-penh"
+  },
+  {
+   "grade": 12,
+   "subject": "physics",
+   "rank": 5,
+   "name": "ង៉ែត បញ្ញាឧត្តម",
+   "gender": "M",
+   "school": "វិ.១០ មករា ១៩៧៩",
+   "province": "siem-reap"
+  },
+  {
+   "grade": 9,
+   "subject": "khmer",
+   "rank": 1,
+   "name": "យឿន កល្យាណ",
+   "gender": "F",
+   "school": "វិ.ព្រៃព្នៅ",
+   "province": "prey-veng"
+  },
+  {
+   "grade": 9,
+   "subject": "khmer",
+   "rank": 2,
+   "name": "ចាន់ សុរិទ្ធា",
+   "gender": "M",
+   "school": "វិ.ហស ខ្សាច់កណ្តាល",
+   "province": "kandal"
+  },
+  {
+   "grade": 9,
+   "subject": "khmer",
+   "rank": 3,
+   "name": "ប៊ុន បញ្ញាវត្តី",
+   "gender": "F",
+   "school": "វិ.កំពង់ធំ",
+   "province": "kampong-thom"
+  },
+  {
+   "grade": 9,
+   "subject": "khmer",
+   "rank": 4,
+   "name": "សុង ឫទ្ធីសក្តិ",
+   "gender": "M",
+   "school": "វិ.ស្រែងគឹម",
+   "province": "kampong-cham"
+  },
+  {
+   "grade": 9,
+   "subject": "khmer",
+   "rank": 5,
+   "name": "ខឿន ខេត",
+   "gender": "M",
+   "school": "អនុវិ.សាមគ្គី",
+   "province": "preah-sihanouk"
+  },
+  {
+   "grade": 9,
+   "subject": "math",
+   "rank": 1,
+   "name": "ឆេង លីហុង",
+   "gender": "M",
+   "school": "វិ.ជប់វារី",
+   "province": "banteay-meanchey"
+  },
+  {
+   "grade": 9,
+   "subject": "math",
+   "rank": 2,
+   "name": "ជា សៀវហួ",
+   "gender": "M",
+   "school": "អនុវិ.ពោធិ៍សាត់",
+   "province": "pursat"
+  },
+  {
+   "grade": 9,
+   "subject": "math",
+   "rank": 3,
+   "name": "អ៊ឹម ប៊េងហុក",
+   "gender": "M",
+   "school": "ខ្រឹម ក្យូឈ័រ អ៊ិនធើណេសិនណាល",
+   "province": "takeo"
+  },
+  {
+   "grade": 9,
+   "subject": "math",
+   "rank": 4,
+   "name": "អោក ណាំហួន",
+   "gender": "F",
+   "school": "វិ.ហស បានដាវ",
+   "province": "kandal"
+  },
+  {
+   "grade": 9,
+   "subject": "math",
+   "rank": 5,
+   "name": "អាន សេងហ៊ិត",
+   "gender": "M",
+   "school": "វិ.១០ មករា ១៩៧៩",
+   "province": "siem-reap"
+  },
+  {
+   "grade": 9,
+   "subject": "physics",
+   "rank": 1,
+   "name": "ឈាង យូអ៊ី",
+   "gender": "F",
+   "school": "អនុវិ.ពោធិ៍សាត់",
+   "province": "pursat"
+  },
+  {
+   "grade": 9,
+   "subject": "physics",
+   "rank": 2,
+   "name": "ឆេន វណ្ណថេន",
+   "gender": "M",
+   "school": "វិ.ហស សំពៅពូន",
+   "province": "kandal"
+  },
+  {
+   "grade": 9,
+   "subject": "physics",
+   "rank": 3,
+   "name": "ចាម ចណ្ឌី",
+   "gender": "M",
+   "school": "អនុវិ.មោងឫស្សី",
+   "province": "battambang"
+  },
+  {
+   "grade": 9,
+   "subject": "physics",
+   "rank": 4,
+   "name": "ភ្លឹង បញ្ញាសក្តិ",
+   "gender": "M",
+   "school": "សាលារៀនសុវណ្ណភូមិ ទី៣៣",
+   "province": "phnom-penh"
+  },
+  {
+   "grade": 9,
+   "subject": "physics",
+   "rank": 5,
+   "name": "ម៉េង បញ្ញា",
+   "gender": "M",
+   "school": "វិ.សអរ ត្រាំខ្នារ",
+   "province": "takeo"
+  }
+ ]
+}

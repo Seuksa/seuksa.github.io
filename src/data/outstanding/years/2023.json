@@ -1,0 +1,128 @@
+{
+ "year": 2023,
+ "examDate": "12 Jun 2023",
+ "resultsDate": "18 Jun 2023",
+ "host": "Net Yang High School, Battambang",
+ "ranksPerSubject": 10,
+ "transcribedFrom": "text",
+ "verified": false,
+ "note": "Partial: 60 honourees were announced (25 girls, 35 boys); only ranks 1–3 named in the report below are recorded (no physics ranks given). Maths gender follows the report (the only girls named in maths were not in the top 3). The full official table is still being sought.",
+ "sources": [
+  {
+   "title": "លទ្ធផលប្រឡងសិស្សពូកែ៖ សិស្សស្រីជាប់២៥នាក់ ក្នុងចំណោមបេក្ខភាពប្រឡង៦០នាក់",
+   "publisher": "Thmey Thmey (citing the MoEYS results table)",
+   "date": "2023-06-18",
+   "url": "https://thmeythmey.com/detail/127578"
+  }
+ ],
+ "entries": [
+  {
+   "grade": 12,
+   "subject": "khmer",
+   "rank": 1,
+   "name": "ហ៊ី ហុងអ៊ី",
+   "gender": null,
+   "school": "វិ.ព្រៃព្នៅ",
+   "province": "prey-veng"
+  },
+  {
+   "grade": 12,
+   "subject": "khmer",
+   "rank": 2,
+   "name": "ហាន តុលា",
+   "gender": null,
+   "school": "វិ.ព្រៃព្នៅ",
+   "province": "prey-veng"
+  },
+  {
+   "grade": 12,
+   "subject": "khmer",
+   "rank": 3,
+   "name": "គិន សាន់នីកា",
+   "gender": null,
+   "school": "វិ.អង្គរនាប",
+   "province": "takeo"
+  },
+  {
+   "grade": 12,
+   "subject": "math",
+   "rank": 1,
+   "name": "រិទ្ធ និវិសាលស្ណុ",
+   "gender": "M",
+   "school": "វិ.ឫស្សីកែវ",
+   "province": "phnom-penh"
+  },
+  {
+   "grade": 12,
+   "subject": "math",
+   "rank": 2,
+   "name": "គាវ សំណាង",
+   "gender": "M",
+   "school": "វិ.ព្រះនរោត្តមរណឫទ្ធិ",
+   "province": "kampot"
+  },
+  {
+   "grade": 12,
+   "subject": "math",
+   "rank": 3,
+   "name": "សុក ចាន់ត្រា",
+   "gender": "M",
+   "school": "វិ.ពាមកោះស្នា",
+   "province": "kampong-cham"
+  },
+  {
+   "grade": 9,
+   "subject": "khmer",
+   "rank": 1,
+   "name": "ឡៃ កន្និកា",
+   "gender": "F",
+   "school": "វិ.ព្រៃព្នៅ",
+   "province": "prey-veng"
+  },
+  {
+   "grade": 9,
+   "subject": "khmer",
+   "rank": 2,
+   "name": "លី ម៉ូនីកា",
+   "gender": null,
+   "school": "វិ.ព្រៃព្នៅ",
+   "province": "prey-veng"
+  },
+  {
+   "grade": 9,
+   "subject": "khmer",
+   "rank": 3,
+   "name": "សុភ័ក្ត សុម៉ារីតា",
+   "gender": null,
+   "school": "វិ.ព្រៃព្នៅ",
+   "province": "prey-veng"
+  },
+  {
+   "grade": 9,
+   "subject": "math",
+   "rank": 1,
+   "name": "សុន បុរីនរិន្ទ",
+   "gender": "M",
+   "school": "វិ.នេតយ៉ង់",
+   "province": "battambang"
+  },
+  {
+   "grade": 9,
+   "subject": "math",
+   "rank": 2,
+   "name": "ធីដេត ដាវីដ",
+   "gender": "M",
+   "school": "អនុវិ.អនុវត្ត",
+   "province": "prey-veng"
+  },
+  {
+   "grade": 9,
+   "subject": "math",
+   "rank": 3,
+   "name": "នី លីហួរ",
+   "gender": "M",
+   "school": "សាលាអន្តរជាតិយូអេសអេ",
+   "province": "battambang"
+  }
+ ]
+}

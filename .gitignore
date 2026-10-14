@@ -3,3 +3,6 @@ dist/
 .astro/
 .DS_Store
 Thumbs.db
+
+# Local snapshots of third-party news articles used as sources (copyrighted – kept out of the public repo)
+archive/sources/
