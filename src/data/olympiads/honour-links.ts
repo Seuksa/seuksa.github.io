@@ -28,7 +28,7 @@ const LINKS: Link[] = [
   { competition: 'IMO', name: 'Sothea Saren', honours: [h(2013, 9, 'math', 3), h(2016, 12, 'math', 5)] },
   { competition: 'IMO', name: 'Seavmey Chip', honours: [h(2013, 9, 'math', 4)], possible: true }, // ជិប ស្មៀមុី
   { competition: 'IMO', name: 'Puthvathna Chourn', honours: [h(2013, 9, 'math', 9)], possible: true }, // ជួន ពុធវន្នូនា
-  { competition: 'IMO', name: 'Namchhoen Veng', honours: [h(2013, 9, 'math', 1), h(2016, 12, 'math', 2)], possible: true }, // ផង ណាំឆិន
+  { competition: 'IMO', name: 'Namchhoen Veng', honours: [h(2013, 9, 'math', 1), h(2016, 12, 'math', 2)] },
   { competition: 'IMO', name: 'Ly An Chhay', honours: [h(2018, 12, 'math', 1)] },
   { competition: 'IMO', name: 'Ompor Chin', honours: [h(2018, 12, 'math', 10)], possible: true }, // ផិន អម្ពរ
   { competition: 'IMO', name: 'Monivathana Ly', honours: [h(2016, 9, 'math', 1)] },
