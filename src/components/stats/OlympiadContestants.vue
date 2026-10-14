@@ -7,6 +7,7 @@ interface Person {
   rank: number | null;
   award: 'G' | 'S' | 'B' | 'HM' | null;
   url?: string;
+  honours?: { year: number; label: string; href: string; km: string; possible: boolean }[];
 }
 const props = defineProps<{ lists: { competition: string; people: Person[] }[] }>();
 
@@ -85,6 +86,19 @@ const chip = (on: boolean) =>
               <td class="px-3 py-2 font-medium">
                 <a v-if="p.url" :href="p.url" rel="noopener" class="hover:text-primary-700 hover:underline dark:hover:text-primary-300">{{ p.name }}</a>
                 <template v-else>{{ p.name }}</template>
+                <span v-if="p.honours?.length" class="mt-0.5 flex flex-wrap gap-1">
+                  <a
+                    v-for="h in p.honours"
+                    :key="h.href"
+                    :href="h.href"
+                    class="inline-flex items-center gap-1 rounded border border-amber-300 bg-amber-50 px-1.5 py-0.5 text-[11px] font-normal text-amber-900 hover:border-amber-500 dark:border-amber-800 dark:bg-amber-950/40 dark:text-amber-200"
+                    :title="`National outstanding students: ${h.km}${h.possible ? ' – possible match, spellings differ' : ''}`"
+                  >
+                    <i class="pi pi-trophy text-[10px]" aria-hidden="true" />
+                    <span>{{ h.label }}{{ h.possible ? ' ?' : '' }}</span>
+                    <span lang="km">· {{ h.km }}</span>
+                  </a>
+                </span>
               </td>
               <td class="px-3 py-2">
                 <span v-if="p.award" class="rounded px-1.5 py-0.5 text-xs" :class="MEDAL[p.award]">{{ AWARD[p.award] }}</span>

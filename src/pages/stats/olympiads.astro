@@ -4,6 +4,7 @@ import PageHero from '../../components/PageHero.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import OlympiadContestants from '../../components/stats/OlympiadContestants.vue';
 import { ASEAN, COMPETITIONS, IMO, IPHO, medalTable, resultFor, yearsOf, type Competition } from '../../data/olympiads';
+import { honoursOf } from '../../data/olympiads/honour-links';
 
 const FOCUS = 'KHM';
 const medalClass: Record<string, string> = {
@@ -23,7 +24,9 @@ const sections = COMPETITIONS.map((c) => ({
   table: medalTable(c),
   years: yearsOf(c),
   cambodia: summary(c),
-  people: [...c.countries[FOCUS].contestants].sort((a, b) => b.year - a.year || (a.rank ?? 9e9) - (b.rank ?? 9e9)),
+  people: [...c.countries[FOCUS].contestants]
+    .sort((a, b) => b.year - a.year || (a.rank ?? 9e9) - (b.rank ?? 9e9))
+    .map((p) => ({ ...p, honours: honoursOf(c.competition, p.name) })),
 }));
 const maxMedals = Math.max(...sections.flatMap((s) => s.table.map((r) => r.gold + r.silver + r.bronze + r.hm)));
 ---
@@ -187,7 +190,7 @@ const maxMedals = Math.max(...sections.flatMap((s) => s.table.map((r) => r.gold 
     <!-- Cambodia contestants -->
     <section id="cambodia" class="mt-16 scroll-mt-20" aria-labelledby="cambodia-h">
       <h2 id="cambodia-h" class="text-2xl font-bold">Cambodia’s contestants <span class="font-normal text-surface-400" lang="km">· បេក្ខជនកម្ពុជា</span></h2>
-      <p class="mt-1 text-sm text-surface-500">Every student who represented Cambodia, with the award and individual rank published by the olympiad.</p>
+      <p class="mt-1 text-sm text-surface-500">Every student who represented Cambodia, with the award and individual rank published by the olympiad. <i class="pi pi-trophy text-xs text-amber-500" aria-hidden="true"></i> links to the student’s place on our <a href="/stats/outstanding-students/" class="text-primary-700 hover:underline dark:text-primary-300">national outstanding students honour roll</a>.</p>
       <OlympiadContestants client:load lists={sections.map(({ c, people }) => ({ competition: c.competition, people }))} />
     </section>
 
@@ -210,6 +213,7 @@ const maxMedals = Math.max(...sections.flatMap((s) => s.table.map((r) => r.gold 
         <h2 class="text-xl font-bold text-surface-900 dark:text-surface-0">Notes</h2>
         <ul class="mt-4 list-disc space-y-2 pl-5">
           <li>Names are shown as published by each olympiad (Latin script).</li>
+          <li>Links to the national honour roll were matched by hand from the Latin and Khmer names, subject and year. Ones marked “?” have spellings that do not fully agree – tell us if you can confirm or correct them. Our honour roll is missing several years, so many olympians have no link yet.</li>
           <li>IMO 2020–2021 and IPhO 2021 were held online; IPhO 2020 was cancelled.</li>
           <li>Laos has not taken part in IPhO; Brunei and Laos have taken part in the IMO once each since 2000.</li>
           <li>Data is refreshed after each olympiad by re-running <code>scripts/fetch-olympiads.mjs</code>; raw pages are kept in our archive.</li>

@@ -3,6 +3,8 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import PageHero from '../../../components/PageHero.astro';
 import Breadcrumbs from '../../../components/Breadcrumbs.astro';
 import { provinceByKey } from '../../../data/provinces';
+import { COMPETITIONS } from '../../../data/olympiads';
+import { olympiadsByHonouree } from '../../../data/olympiads/honour-links';
 import { GRADES, OUTSTANDING, SUBJECTS, SUBJECT_ORDER, countBy, honoureeId, type OutstandingYear } from '../../../data/outstanding';
 
 export function getStaticPaths() {
@@ -13,6 +15,8 @@ export function getStaticPaths() {
 }
 
 const { y, prev, next } = Astro.props as { y: OutstandingYear; prev?: number; next?: number };
+const olympians = olympiadsByHonouree(COMPETITIONS.flatMap((c) => c.countries.KHM.contestants.map((p) => ({ ...p, competition: c.competition }))));
+const AWARD: Record<string, string> = { G: 'gold', S: 'silver', B: 'bronze', HM: 'honourable mention' };
 const byProvince = countBy(y.entries, (e) => e.province);
 const max = byProvince[0]?.[1] ?? 1;
 const girls = y.entries.filter((e) => e.gender === 'F').length;
@@ -69,6 +73,16 @@ const medal = (rank: number) =>
                           <span class:list={['mt-0.5 inline-flex size-7 shrink-0 items-center justify-center rounded-full text-xs font-bold', medal(e.rank)]}>{e.rank}</span>
                           <span class="min-w-0">
                             <span class="block font-medium">{e.name}</span>
+                            {olympians.get(`${y.year}|${honoureeId(e)}`)?.map((o) => (
+                              <a
+                                href={`/stats/olympiads/?year=${o.year}#cambodia`}
+                                lang="en"
+                                class="mr-1 mt-0.5 inline-flex items-center gap-1 rounded border border-primary-200 bg-primary-50 px-1.5 py-0.5 text-[11px] text-primary-800 hover:border-primary-400 dark:border-primary-800 dark:bg-primary-950/50 dark:text-primary-200"
+                                title={`Represented Cambodia at the ${o.competition} ${o.year}${o.award ? ` – ${AWARD[o.award]}` : ''}${o.possible ? ' (possible match, spellings differ)' : ''}`}
+                              >
+                                <i class="pi pi-globe text-[10px]" aria-hidden="true" />{o.competition} {o.year}{o.award && ` · ${o.award}`}{o.possible && ' ?'}
+                              </a>
+                            ))}
                             <span class="block text-xs text-surface-500">{e.school ? `${e.school} · ` : ""}{provinceByKey[e.province].km}</span>
                           </span>
                         </li>
