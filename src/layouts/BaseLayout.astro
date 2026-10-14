@@ -45,6 +45,16 @@ const ogImage = image ? new URL(image, Astro.site).href : undefined;
     {ogImage && <meta property="og:image" content={ogImage} />}
     <meta name="twitter:card" content={ogImage ? 'summary_large_image' : 'summary'} />
     <meta name="theme-color" content={brand === 'nitean' ? '#b45309' : '#4338ca'} />
+    <!-- Google tag (gtag.js) -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-PZSG2H7HY3"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-PZSG2H7HY3');
+    </script>
     <script is:inline>
       try {
         const t = localStorage.getItem('theme');
