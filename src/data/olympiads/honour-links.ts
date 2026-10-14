@@ -44,7 +44,7 @@ const LINKS: Link[] = [
   { competition: 'IMO', name: 'Kimheng Ngov', honours: [h(2024, 9, 'math', 5)] },
   // IPhO
   { competition: 'IPhO', name: 'Ny Vannat', honours: [h(2011, 12, 'physics', 1)] },
-  { competition: 'IPhO', name: 'Sopheak Sorn', honours: [h(2011, 12, 'physics', 2)], possible: true }, // សិន សុភ័ក្រ
+  { competition: 'IPhO', name: 'Sopheak Sorn', honours: [h(2011, 12, 'physics', 2)] },
   { competition: 'IPhO', name: 'Sokanha Ly', honours: [h(2014, 12, 'physics', 1)] },
   { competition: 'IPhO', name: 'Sin Rithy Vong', honours: [h(2018, 12, 'physics', 5)] },
   { competition: 'IPhO', name: 'Panhaudom Nget', honours: [h(2026, 12, 'physics', 5)] },
