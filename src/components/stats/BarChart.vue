@@ -3,6 +3,8 @@ import { computed, ref } from 'vue';
 
 export interface BarItem {
   label: string;
+  /** Optional second line under the axis label (e.g. an English code under a Khmer one). */
+  sublabel?: string;
   value: number | null;
   /** Tooltip rows after the headline value: [label, value]. */
   details?: [string, string][];
@@ -29,7 +31,8 @@ const props = withDefaults(
 
 const W = 720;
 const H = 300;
-const M = { l: 52, r: 12, t: 28, b: 30 };
+const hasSub = props.items.some((i) => i.sublabel);
+const M = { l: 52, r: 12, t: 28, b: hasSub ? 44 : 30 };
 const pw = W - M.l - M.r;
 const ph = H - M.t - M.b;
 
@@ -87,6 +90,7 @@ function onKey(e: KeyboardEvent) {
 /** Regular ticks every n bars, plus the last bar; drop a regular tick that would crowd the last one. */
 const showTick = (i: number) => {
   const last = props.items.length - 1;
+  if (props.tickEvery <= 1) return true;
   return i === last || (i % props.tickEvery === 0 && last - i >= Math.max(2, props.tickEvery / 2));
 };
 const index = (label: string) => props.items.findIndex((i) => i.label === label);
@@ -160,12 +164,23 @@ const index = (label: string) => props.items.findIndex((i) => i.label === label)
         <text
           v-if="showTick(i)"
           :x="x(i) + barW / 2"
-          :y="H - 10"
+          :y="hasSub ? H - 24 : H - 10"
           font-size="11"
           text-anchor="middle"
           fill="currentColor"
         >
           {{ item.label }}
+        </text>
+        <text
+          v-if="item.sublabel && showTick(i)"
+          :x="x(i) + barW / 2"
+          :y="H - 8"
+          font-size="9"
+          text-anchor="middle"
+          fill="currentColor"
+          fill-opacity="0.7"
+        >
+          {{ item.sublabel }}
         </text>
         <!-- hit target: the full slot height, wider than the bar -->
         <rect

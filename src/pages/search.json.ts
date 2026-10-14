@@ -1,6 +1,8 @@
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 import { SECTIONS, articleUrl, chapterUrl, getArticles } from '../lib/site';
+import { ALL_HONOUREES, SUBJECTS, honoureeId } from '../data/outstanding';
+import { provinceByKey } from '../data/provinces';
 
 /** Compact client-side search index (title, url, description, section, brand). */
 export const GET: APIRoute = async () => {
@@ -21,7 +23,14 @@ export const GET: APIRoute = async () => {
     b: 'nitean',
   }));
   const bookDocs = books.map((b) => ({ t: b.data.title, u: `/nitean/${b.id}/`, d: b.data.description ?? '', s: 'Book', b: 'nitean' }));
-  return new Response(JSON.stringify([...bookDocs, ...articles, ...chapters]), {
+  const honourees = ALL_HONOUREES.map((e) => ({
+    t: e.name,
+    u: `/stats/outstanding-students/${e.year}/#${honoureeId(e)}`,
+    d: `Rank ${e.rank} · ${SUBJECTS[e.subject].km} · grade ${e.grade} · ${e.school} · ${provinceByKey[e.province].km}`,
+    s: `Outstanding students ${e.year}`,
+    b: 'seuksa',
+  }));
+  return new Response(JSON.stringify([...bookDocs, ...articles, ...chapters, ...honourees]), {
     headers: { 'Content-Type': 'application/json' },
   });
 };

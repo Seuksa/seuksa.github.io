@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import { BAC_II } from '../../data/bac-ii';
+import { ALL_HONOUREES } from '../../data/outstanding';
 
 const first = BAC_II[0];
 const latest = BAC_II.at(-1)!;
@@ -12,6 +13,13 @@ const datasets = [
     km: 'ស្ថិតិប្រឡងបាក់ឌុប',
     text: `Candidates, pass rate and grades A–E, ${first.year}–${latest.year}. Latest: ${latest.passRate}% passed in ${latest.year}.`,
     icon: 'pi pi-chart-bar',
+  },
+  {
+    href: '/stats/outstanding-students/',
+    title: 'National outstanding students',
+    km: 'ជ័យលាភីសិស្សពូកែទូទាំងប្រទេស',
+    text: `Honour roll for Khmer literature, mathematics and physics (grades 9 and 12): ${ALL_HONOUREES.length} honourees by name, school and province.`,
+    icon: 'pi pi-trophy',
   },
 ];
 ---
