@@ -186,10 +186,22 @@ function uniqueSlug(slug, used) {
   return s;
 }
 
+/**
+ * Outbound links that moved since the article was written: old URL → current URL.
+ * Applied on every import, so fixes survive re-running the importer.
+ */
+const LINK_REWRITES = {
+  'http://www.phnompenhpost.com/index.php/2012061356778/LIFT/high-school-sweet-hearts-will-it-last-until-marriage.html':
+    'https://phnompenhpost.com/business/high-school-sweet-hearts-will-it-last-until-marriage/',
+  'http://www.phnompenhpost.com/index.php/2012062056905/LIFT/letter-to-the-editor.html':
+    'https://phnompenhpost.com/business/letter-editor-2/',
+};
+const rewriteLinks = (md) => Object.entries(LINK_REWRITES).reduce((s, [from, to]) => s.split(from).join(to), md);
+
 /** Turn legacy WordPress leftovers into clean Markdown. */
 function cleanBody(md) {
   return (
-    qtranslate(md)
+    rewriteLinks(qtranslate(md))
       // WordPress tabs shortcode → headings
       .replace(/\\\[tab:END\\\]/g, '')
       .replace(/\\\[tab:(.+?)\\\]/g, (_, t) => `\n### ${t.replace(/\*\*/g, '').trim()}\n`)

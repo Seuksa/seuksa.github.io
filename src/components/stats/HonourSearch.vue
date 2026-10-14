@@ -29,33 +29,50 @@ const q = ref('');
 const province = ref<string | null>(null);
 const grade = ref<number | null>(null);
 const subject = ref<string | null>(null);
+const year = ref<number | null>(null);
 const first = ref(0);
 
 onMounted(() => {
   const p = new URLSearchParams(location.search);
   q.value = p.get('q') ?? '';
   province.value = p.get('province');
+  year.value = Number(p.get('year')) || null;
+  // Links from the province chart (…?province=x#s-search) land on the honour roll once it has rendered.
+  // Instant (not smooth) and after a beat, so chart islands hydrating above don't interrupt it.
+  if (location.hash) setTimeout(() => document.querySelector(location.hash)?.scrollIntoView({ block: 'start', behavior: 'instant' }), 200);
 });
-watch([q, province], () => {
+watch([q, province, year], () => {
   const u = new URL(location.href);
   q.value ? u.searchParams.set('q', q.value) : u.searchParams.delete('q');
   province.value ? u.searchParams.set('province', province.value) : u.searchParams.delete('province');
+  year.value ? u.searchParams.set('year', String(year.value)) : u.searchParams.delete('year');
   history.replaceState(null, '', u);
 });
 
 const norm = (s: string) => s.normalize('NFC').replace(/[​-‍\s]+/g, '').toLowerCase();
-const filtered = computed(() => {
+/** Everything except the year filter – drives the per-year chip counts. */
+const base = computed(() => {
   const t = norm(q.value);
   return props.rows.filter(
     (r) =>
       (!province.value || r.province === province.value) &&
       (!grade.value || r.grade === grade.value) &&
       (!subject.value || r.subject === subject.value) &&
-      (!t || norm(r.name).includes(t) || norm(r.school).includes(t) || String(r.year) === q.value.trim()),
+      (!t || norm(r.name).includes(t) || norm(r.school).includes(t)),
   );
 });
+const filtered = computed(() => (year.value ? base.value.filter((r) => r.year === year.value) : base.value));
+const years = computed(() => {
+  const all = [...new Set(props.rows.map((r) => r.year))].sort((a, b) => b - a);
+  return all.map((y) => ({ y, n: base.value.filter((r) => r.year === y).length }));
+});
 const page = computed(() => filtered.value.slice(first.value, first.value + props.perPage));
-watch([q, province, grade, subject], () => (first.value = 0));
+/** Year group header shown before the first row of each year on the page. */
+const startsYear = (i: number) => i === 0 || page.value[i - 1].year !== page.value[i].year;
+const yearCount = (y: number) => filtered.value.filter((r) => r.year === y).length;
+const provinceLabel = computed(() => props.provinces.find((p) => p.key === province.value)?.label);
+const yearsWithData = computed(() => years.value.filter((x) => x.n > 0).length);
+watch([q, province, grade, subject, year], () => (first.value = 0));
 
 const khmerDigits = (n: number) => String(n).replace(/\d/g, (d) => '០១២៣៤៥៦៧៨៩'[Number(d)]);
 const medal = (rank: number) => (rank === 1 ? 'bg-amber-400 text-amber-950' : rank === 2 ? 'bg-slate-300 text-slate-900' : rank === 3 ? 'bg-orange-300 text-orange-950' : 'bg-surface-100 text-surface-700 dark:bg-surface-800 dark:text-surface-200');
@@ -78,7 +95,34 @@ const medal = (rank: number) => (rank === 1 ? 'bg-amber-400 text-amber-950' : ra
         aria-label="Subject"
       />
     </div>
-    <p class="mt-3 text-sm text-surface-500" aria-live="polite">{{ filtered.length }} of {{ rows.length }} honourees</p>
+    <div class="mt-4 flex flex-wrap items-center gap-1.5" role="group" aria-label="Filter by year">
+      <span class="mr-1 text-xs font-semibold text-surface-500">Year · ឆ្នាំ</span>
+      <button
+        type="button"
+        class="rounded-full border px-3 py-1 text-xs font-medium transition"
+        :class="!year ? 'border-primary-600 bg-primary-600 text-white' : 'border-surface-200 text-surface-700 hover:border-primary-300 dark:border-surface-700 dark:text-surface-300'"
+        :aria-pressed="!year"
+        @click="year = null"
+      >
+        All <span class="opacity-70">{{ base.length }}</span>
+      </button>
+      <button
+        v-for="x in years"
+        :key="x.y"
+        type="button"
+        :disabled="!x.n"
+        class="rounded-full border px-3 py-1 text-xs font-medium tabular-nums transition disabled:cursor-not-allowed disabled:opacity-35"
+        :class="year === x.y ? 'border-primary-600 bg-primary-600 text-white' : 'border-surface-200 text-surface-700 hover:border-primary-300 dark:border-surface-700 dark:text-surface-300'"
+        :aria-pressed="year === x.y"
+        @click="year = year === x.y ? null : x.y"
+      >
+        {{ x.y }} <span class="opacity-70">{{ x.n }}</span>
+      </button>
+    </div>
+    <p class="mt-3 text-sm text-surface-500" aria-live="polite">
+      <template v-if="provinceLabel"><strong class="text-surface-800 dark:text-surface-200">{{ provinceLabel }}</strong> – {{ base.length }} honourees in {{ yearsWithData }} year{{ yearsWithData === 1 ? '' : 's' }}<template v-if="year">, showing {{ year }} ({{ filtered.length }})</template></template>
+      <template v-else>{{ filtered.length }} of {{ rows.length }} honourees</template>
+    </p>
 
     <div class="mt-4 overflow-x-auto rounded-2xl border border-surface-200 dark:border-surface-800">
       <table class="w-full min-w-[44rem] text-left text-sm">
@@ -93,7 +137,14 @@ const medal = (rank: number) => (rank === 1 ? 'bg-amber-400 text-amber-950' : ra
           </tr>
         </thead>
         <tbody class="divide-y divide-surface-100 dark:divide-surface-800" lang="km">
-          <tr v-for="r in page" :key="r.url" class="hover:bg-primary-50/40 dark:hover:bg-primary-950/30">
+          <template v-for="(r, i) in page" :key="r.url">
+          <tr v-if="startsYear(i)" class="bg-surface-50/70 dark:bg-surface-900/60">
+            <th colspan="6" scope="rowgroup" class="px-3 py-1.5 text-left text-xs font-semibold text-surface-600 dark:text-surface-300" lang="en">
+              {{ r.year }} <span class="font-normal text-surface-400">· {{ yearCount(r.year) }} honouree{{ yearCount(r.year) === 1 ? '' : 's' }}</span>
+              <a :href="`/stats/outstanding-students/${r.year}/`" class="ml-2 font-normal text-primary-700 hover:underline dark:text-primary-300">year page →</a>
+            </th>
+          </tr>
+          <tr class="hover:bg-primary-50/40 dark:hover:bg-primary-950/30">
             <td class="px-3 py-2 tabular-nums"><a :href="r.url" class="text-primary-700 hover:underline dark:text-primary-300">{{ r.year }}</a></td>
             <td class="px-3 py-2">
               <span class="inline-flex size-7 items-center justify-center rounded-full text-xs font-bold" :class="medal(r.rank)">{{ r.rank }}</span>
@@ -103,6 +154,7 @@ const medal = (rank: number) => (rank === 1 ? 'bg-amber-400 text-amber-950' : ra
             <td class="px-3 py-2">{{ r.school || "—" }}</td>
             <td class="px-3 py-2">{{ r.provinceKm }}</td>
           </tr>
+          </template>
           <tr v-if="!filtered.length">
             <td colspan="6" class="px-3 py-10 text-center text-surface-500">No honouree matches.</td>
           </tr>

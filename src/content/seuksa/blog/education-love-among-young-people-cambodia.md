@@ -12,7 +12,7 @@ source: "http://blog.seuksa.com/2012/06/education-love-among-young-people-cambod
 ---
 Dear LIFT,
 
-Having read your article about “[High school sweet hearts: Will it last until marriage?](http://www.phnompenhpost.com/index.php/2012061356778/LIFT/high-school-sweet-hearts-will-it-last-until-marriage.html)” published June 13, I would like contribute my personal comments in response.
+Having read your article about “[High school sweet hearts: Will it last until marriage?](https://phnompenhpost.com/business/high-school-sweet-hearts-will-it-last-until-marriage/)” published June 13, I would like contribute my personal comments in response.
 
 Education and love is a contentious topic in every country. Most high school students tend to have boyfriends or girlfriends these days, regardless of cultural restrictions.
 
@@ -35,4 +35,4 @@ Sok Pongsametrey
 
 ---
 
-Phnom Penh Post: [Letter to the Editor](http://www.phnompenhpost.com/index.php/2012062056905/LIFT/letter-to-the-editor.html)
+Phnom Penh Post: [Letter to the Editor](https://phnompenhpost.com/business/letter-editor-2/)

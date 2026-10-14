@@ -10,6 +10,8 @@ export interface BarItem {
   details?: [string, string][];
   /** Shown instead of a bar when value is null (e.g. "No exam"). */
   emptyText?: string;
+  /** Click / Enter on the bar opens this link (e.g. a filtered view). */
+  href?: string;
 }
 
 const props = withDefaults(
@@ -77,6 +79,8 @@ const active = ref<number | null>(null);
 const tip = computed(() => (active.value == null ? null : props.items[active.value]));
 const tipLeft = computed(() => (active.value == null ? 0 : ((x(active.value) + barW.value / 2) / W) * 100));
 
+const go = (href: string) => (location.href = href);
+
 function onKey(e: KeyboardEvent) {
   const n = props.items.length;
   if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
@@ -86,6 +90,7 @@ function onKey(e: KeyboardEvent) {
   } else if (e.key === 'Home') active.value = 0;
   else if (e.key === 'End') active.value = n - 1;
   else if (e.key === 'Escape') active.value = null;
+  else if (e.key === 'Enter' && active.value != null && props.items[active.value].href) go(props.items[active.value].href!);
 }
 /** Regular ticks every n bars, plus the last bar; drop a regular tick that would crowd the last one. */
 const showTick = (i: number) => {
@@ -189,8 +194,10 @@ const index = (label: string) => props.items.findIndex((i) => i.label === label)
           :width="slot"
           :height="ph"
           fill="transparent"
+          :class="item.href ? 'cursor-pointer' : ''"
           @pointerenter="active = i"
           @pointerdown="active = i"
+          @click="item.href && go(item.href)"
         >
           <title>{{ item.label }}: {{ item.value == null ? item.emptyText || '—' : fmt(item.value) }}</title>
         </rect>

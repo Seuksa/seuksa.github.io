@@ -22,6 +22,7 @@ const provinceItems = byProvince.map(([k, n]) => {
     label: prov.shortKm,
     sublabel: prov.code,
     value: n,
+    href: `/stats/outstanding-students/?province=${k}#s-search`,
     details: [
       ['Province', `${prov.km} · ${prov.en}`],
       ['Rank 1', String(rows.filter((e) => e.rank === 1).length)],
@@ -87,14 +88,14 @@ const provinceOptions = PROVINCES.map((p) => ({ key: p.key, label: `${p.km} · $
     </section>
 
     <section class="mt-12" aria-labelledby="s-search">
-      <h2 id="s-search" class="text-xl font-bold">Honour roll · តារាងកិត្តិយស</h2>
+      <h2 id="s-search" class="scroll-mt-20 text-xl font-bold">Honour roll · តារាងកិត្តិយស</h2>
       <p class="mb-4 text-sm text-surface-500">Search any honouree by name or school, or filter by province, grade and subject.</p>
       <HonourSearch client:load rows={rows} provinces={provinceOptions} />
     </section>
 
     <section class="mt-14" aria-labelledby="s-prov">
       <h2 id="s-prov" class="text-xl font-bold">Honourees by capital / province</h2>
-      <p class="mb-3 text-sm text-surface-500">All recorded years combined, shown with short codes (key below). Hover a bar for the full name, rank-1 counts and subjects.</p>
+      <p class="mb-3 text-sm text-surface-500">All recorded years combined, shown with short codes (key below). Hover a bar for details; <strong>click a bar</strong> to see that province’s honourees year by year.</p>
       <div class="rounded-2xl border border-surface-200 p-4 dark:border-surface-800">
         <BarChart client:visible title="Honourees by province" valueLabel="Honourees" items={provinceItems} labelled={[provinceItems[0]?.label]} tickEvery={1} />
       </div>
