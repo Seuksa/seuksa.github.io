@@ -175,7 +175,7 @@ const updated = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 
       <div class="mb-3 flex flex-wrap items-end justify-between gap-3">
         <div>
           <h2 id="t-all" class="text-xl font-bold">All results · លទ្ធផលទាំងអស់</h2>
-          <p class="text-sm text-surface-500">— = not published in any official source we found. ≈ = reported as approximate. ᴿ = registered candidates.</p>
+          <p class="text-sm text-surface-500">— = not published in any official source we found. ≈ = reported as approximate. Pass rates are on candidates who sat.</p>
         </div>
         <div class="flex gap-2">
           <a href="/stats/bac-ii.csv" download class="inline-flex items-center gap-2 rounded-lg border border-surface-300 px-3 py-2 text-sm font-medium hover:border-primary-400 hover:text-primary-700 dark:border-surface-700 dark:hover:text-primary-300"><i class="pi pi-download"></i>CSV</a>
@@ -188,7 +188,8 @@ const updated = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 
             <tr>
               <th class="sticky left-0 bg-surface-50 px-3 py-3 font-semibold dark:bg-surface-900">Year</th>
               <th class="px-3 py-3 font-semibold">Exam / results</th>
-              <th class="px-3 py-3 text-right font-semibold">Candidates</th>
+              <th class="px-3 py-3 text-right font-semibold">Registered</th>
+              <th class="px-3 py-3 text-right font-semibold">Sat</th>
               <th class="px-3 py-3 text-right font-semibold">Passed</th>
               <th class="px-3 py-3 text-right font-semibold">Pass rate</th>
               {GRADE_KEYS.map((k) => <th class="px-3 py-3 text-right font-semibold">{k}</th>)}
@@ -208,9 +209,8 @@ const updated = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 
                     {y.examDate && <span class="block">Exam: {y.examDate}</span>}
                     {y.resultsDate && <span class="block">Results: {y.resultsDate}</span>}
                   </td>
-                  <td class="px-3 py-2.5 text-right">
-                    {y.sat != null ? n(y.sat) : y.registered != null ? <>{n(y.registered)}<sup class="text-surface-400">R</sup></> : '—'}
-                  </td>
+                  <td class="px-3 py-2.5 text-right">{n(y.registered)}</td>
+                  <td class="px-3 py-2.5 text-right">{n(y.sat)}</td>
                   <td class="px-3 py-2.5 text-right">{y.cancelled ? 'all' : `${y.approx?.includes('passed') ? '≈ ' : ''}${n(y.passed)}`}</td>
                   <td class="px-3 py-2.5 text-right font-semibold">{y.cancelled ? <span class="font-normal text-surface-500">no exam</span> : pct(y.passRate)}</td>
                   {GRADE_KEYS.map((k) => <td class="px-3 py-2.5 text-right">{y.grades ? n(y.grades[k]) : '—'}</td>)}

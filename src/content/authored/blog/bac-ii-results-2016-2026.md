@@ -25,14 +25,14 @@ Since our [2016 result post](/blog/high-school-2016-result-62-18-percentage-pass
 | Year | Results out | Candidates | Passed | Pass rate | A | B | C | D | E |
 |:--|:--|--:|--:|--:|--:|--:|--:|--:|--:|
 | 2016 | 10 Sep 2016 | 89,661 | 55,753 | 62.18% | 405 | 2,801 | 5,595 | 8,835 | 38,117 |
-| 2017 | 10 Sep 2017 | 99,728 | — | 63.84% | 424 | 2,464 | — | — | 46,657 |
-| 2018 | Sep 2018 | — | — | 67.07% | 408 | — | — | — | — |
-| 2019 | 9 Sep 2019 | — | 79,052 | 68.62% | 443 | 2,430 | 5,847 | 14,100 | 56,232 |
+| 2017 | 10 Sep 2017 | 99,728 | 63,668 | 63.84% | 424 | 2,464 | 5,000 | 9,123 | 46,657 |
+| 2018 | Sep 2018 | 117,061 † | 76,034 | 67.07% | 408 | 2,222 | 6,041 | 15,180 | 52,183 |
+| 2019 | 9 Sep 2019 | 117,024 † | 79,052 | 68.62% | 443 | 2,430 | 5,847 | 14,100 | 56,232 |
 | 2020 | — | 121,108 † | all | *no exam* | — | — | — | — | — |
 | 2021 | 14 Jan 2022 | 114,187 † | 72,016 | 65.65% | 1,753 | 5,215 | 11,634 | 23,499 | 29,915 |
-| 2022 | 22 Dec 2022 | 128,135 | 90,950 | 72.33% | 1,049 | 7,232 | 19,053 | 31,166 | 32,450 |
-| 2023 | Nov 2023 | 137,412 | 98,460 | 72.89% | 1,673 | 6,964 | 18,308 | 34,246 | 37,269 |
-| 2024 | 30 Oct 2024 | 130,000+ | 106,351 | 79% | 2,216 | 9,701 | 22,675 | 36,683 | 35,076 |
+| 2022 | 22 Dec 2022 | 125,735 | 90,950 | 72.33% | 1,049 | 7,232 | 19,053 | 31,166 | 32,450 |
+| 2023 | Nov 2023 | 135,084 | 98,460 | 72.89% | 1,673 | 6,964 | 18,308 | 34,246 | 37,269 |
+| 2024 | 30 Oct 2024 | 134,634 | 106,351 | 79% | 2,216 | 9,701 | 22,675 | 36,683 | 35,076 |
 | 2025 | 19 Sep 2025 | 146,720 † | 122,473 | 84.56% | 3,003 | 9,901 | 28,801 | 45,859 | 34,909 |
 | 2026 | 1 Sep 2026 | 151,238 † | 125,975 | 84.06% | 2,022 | 8,848 | 23,422 | 44,869 | 46,814 |
 
@@ -41,14 +41,14 @@ Since our [2016 result post](/blog/high-school-2016-result-62-18-percentage-pass
 ## Year by year · ព្រឹត្តិការណ៍តាមឆ្នាំ
 
 - **2016** – Exam on 22 August. 62.18% passed and 405 grade A, of whom 183 were from Phnom Penh. Full details are in [our 2016 post](/blog/high-school-2016-result-62-18-percentage-passed-a405/).
-- **2017** – A small rise to 63.84% of 99,728 candidates, with 424 grade A. The pass mark was 47%.
-- **2018** – 67.07% passed with 408 grade A, according to the ministry’s 2019 statement. Early press reports in September 2018 gave lower preliminary numbers (about 66% and at least 290 grade A).
-- **2019** – 79,052 students passed (68.62%), with 443 grade A. Phnom Penh had 141 of them, followed by Siem Reap (38) and Battambang (32).
+- **2017** – A small rise: 63,668 of 99,728 candidates passed (63.84%), with 424 grade A. The pass mark was 47%.
+- **2018** – Exam on 21–22 August. 76,034 passed (67.07%) with 408 grade A. These are the corrected results: the first release (75,059 passed, 66.21%, 290 grade A) was revised after scoring errors were found.
+- **2019** – Exam on 19–20 August, with 117,024 candidates. 79,052 passed (68.62%), with 443 grade A. Phnom Penh had 141 of them, followed by Siem Reap (38) and Battambang (32).
 - **2020** – **No exam.** The exam had been moved to 11 January 2021 after the “28 November” COVID-19 outbreak. On 14 December 2020 the Prime Minister cancelled it, and all 121,108 registered grade 12 students passed automatically, without grades.
-- **2021** – The exam returned. Results came out on 14 January 2022: 72,016 of 114,187 registered candidates passed, a pass rate of 65.65% (some later reports say 65.64%). It was the first year with more than 1,000 grade A (1,753).
-- **2022** – Exam on 5–6 December. 72.33% of 128,135 candidates passed. Grade A fell to 1,049.
-- **2023** – Exam in November. 98,460 of 137,412 candidates passed (72.89%), with 1,673 grade A.
-- **2024** – Exam on 8 October. 79% passed, and grade A reached 2,216.
+- **2021** – The exam returned on 27–28 December 2021. Results came out on 14 January 2022: 72,016 of 114,187 registered candidates passed, a pass rate of 65.65% (some later reports say 65.64%). It was the first year with more than 1,000 grade A (1,753).
+- **2022** – Exam on 5–6 December. 90,950 of the 125,735 candidates who sat passed (72.33%). Grade A fell to 1,049.
+- **2023** – Exam in November. 98,460 of the 135,084 candidates who sat passed (72.89%; 137,412 had registered), with 1,673 grade A.
+- **2024** – Exam on 8–9 October. 137,040 registered and 134,634 sat; 106,351 passed (79%), and grade A reached 2,216.
 - **2025** – The exam moved back to the summer (28–29 August). 146,720 candidates registered, and a record 84.56% passed. Grade A reached 3,003, about 35% more than in 2024.
 - **2026** – Exam on 10–11 August, and results came out on 1 September. 125,975 students passed (84.06%), including 32,821 in science and 93,154 in social science. Of the 2,022 grade A, 1,766 (87.8%) were science students. Phnom Penh had the most grade A (783), followed by Kandal (186) and Siem Reap (168).
 
@@ -73,13 +73,14 @@ For the years before this period, see [34 years of Bac II (1980–2013)](/blog/3
 ### Sources
 
 - 2016: MoEYS announcement, via [our 2016 post](/blog/high-school-2016-result-62-18-percentage-passed-a405/)
-- 2017: [Phnom Penh Post – Exam pass rate increases (11 Sep 2017)](https://phnompenhpost.com/national/exam-pass-rate-increases/)
+- 2017: [Phnom Penh Post – Exam pass rate increases (11 Sep 2017)](https://phnompenhpost.com/national/exam-pass-rate-increases/), [Cambonomist (10 Sep 2017)](https://cambonomist.com/news/bac-ii-results-2017/)
+- 2014–2023 by year: [MoEYS report via Kampuchea Thmey (23 Nov 2023)](https://www.kampucheathmey.com/local-news/617454), [MoEYS figures 2014–2019 via CNC](https://www.cnc.com.kh/detail/news/4186)
 - 2018–2019: [Khmer Times – 68 percent of students pass high school exam (9 Sep 2019)](https://www.khmertimeskh.com/641560/68-percent-of-students-pass-high-school-exam/)
 - 2020: [Khmer Times – PM says Grade 12 exams cancelled, all students pass (15 Dec 2020)](https://www.khmertimeskh.com/50793598/pm-says-grade-12-exams-cancelled-all-students-pass/)
 - 2021: [Phnom Penh Post – Over 65% of Grade 12 students pass exam (14 Jan 2022)](https://phnompenhpost.com/national/over-65-grade-12-students-pass-exam/)
 - 2022: [Cambodianess – Grade 12 exam success for 91,000](https://www.cambodianess.com/article/grade-12-exam-success-for-91000), [Khmer Times – 1,049 Grade A scorers (22 Dec 2022)](https://www.khmertimeskh.com/501207263/bac-ii-exams-see-a-70-passing-rate-with-1049-grade-a-scorers/)
 - 2023: [Cambodianess – Bac II pass rate reaches 72.89 pct (23 Nov 2023)](https://cambodianess.com/article/bac-ii-pass-rate-reaches-7289-pct)
-- 2024: [Khmer Times – Over 100,000 candidates passed, 2,216 grade A (30 Oct 2024)](https://www.khmertimeskh.com/501582895/over-100000-candidates-passed-the-bacii-exam-with-2216-achieving-a-levels-according-to-moeys/)
+- 2024: [Khmer Times – 79% of students passed (30 Oct 2024)](https://www.khmertimeskh.com/501583150/79-of-students-passed-the-national-bacii-exam-this-year/), [Khmer Times – Over 100,000 candidates passed, 2,216 grade A (30 Oct 2024)](https://www.khmertimeskh.com/501582895/over-100000-candidates-passed-the-bacii-exam-with-2216-achieving-a-levels-according-to-moeys/)
 - 2025: [Khmer Times – Ministry announces Bac II 2025 results (19 Sep 2025)](https://www.khmertimeskh.com/501760139/ministry-of-education-announces-bac-ii-2025-results/), [Cambodianess – Bac II exam sets record pass rate](https://cambodianess.com/article/bac-ii-exam-sets-record-pass-rate)
 - 2026: [Cambodianess – Cambodia records 84 percent pass rate](https://cambodianess.com/article/cambodia-records-84-percent-pass-rate-in-bac-ii-exam), [Khmer Times – BacII exam concludes, results due September 2 (11 Aug 2026)](https://www.khmertimeskh.com/501996140/cambodian-bacii-exam-concludes-smoothly-nationwide-results-due-september-2/)
 
