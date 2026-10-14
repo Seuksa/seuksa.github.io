@@ -1,0 +1,247 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { ASEAN, AWARD_LABEL, COMPETITIONS, IMO, IPHO, medalTable, resultFor, yearsOf, type Competition } from '../../data/olympiads';
+
+const FOCUS = 'KHM';
+const medalClass: Record<string, string> = {
+  G: 'bg-amber-400 text-amber-950',
+  S: 'bg-slate-300 text-slate-900',
+  B: 'bg-orange-300 text-orange-950',
+  HM: 'bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-100',
+};
+const summary = (c: Competition) => {
+  const t = medalTable(c).find((r) => r.key === FOCUS)!;
+  const people = c.countries[FOCUS].contestants;
+  return { ...t, contestants: people.length, years: c.countries[FOCUS].results.map((r) => r.year) };
+};
+const sections = COMPETITIONS.map((c) => ({
+  c,
+  id: c.competition.toLowerCase(),
+  table: medalTable(c),
+  years: yearsOf(c),
+  cambodia: summary(c),
+  people: [...c.countries[FOCUS].contestants].sort((a, b) => b.year - a.year || (a.rank ?? 9e9) - (b.rank ?? 9e9)),
+}));
+const maxMedals = Math.max(...sections.flatMap((s) => s.table.map((r) => r.gold + r.silver + r.bronze + r.hm)));
+---
+
+<BaseLayout
+  title="IMO & IPhO – ASEAN comparison · អូឡាំពិកអន្តរជាតិ"
+  description="International Mathematical Olympiad and International Physics Olympiad results of the ASEAN countries since 2000, with Cambodia’s full participation record and official sources."
+>
+  <PageHero
+    title="International Olympiads – ASEAN"
+    kicker="អូឡាំពិកគណិតវិទ្យា និងរូបវិទ្យាអន្តរជាតិ"
+    icon="pi pi-globe"
+    description={`How the 10 ASEAN countries have done at the IMO (mathematics) and IPhO (physics) since 2000 – and every Cambodian contestant. Data from the official results databases, updated ${IMO.fetched}.`}
+  >
+    <div class="mt-6 flex flex-wrap items-center gap-4">
+      <Breadcrumbs items={[{ label: 'Statistics', href: '/stats/' }, { label: 'IMO & IPhO' }]} />
+      <nav class="flex gap-2 text-sm">
+        {sections.map((s) => <a href={`#${s.id}`} class="rounded-full border border-surface-300 px-3 py-1 hover:border-primary-400 dark:border-surface-700">{s.c.competition}</a>)}
+        <a href="#cambodia" class="rounded-full border border-surface-300 px-3 py-1 hover:border-primary-400 dark:border-surface-700">Cambodia’s contestants</a>
+      </nav>
+    </div>
+  </PageHero>
+
+  <div class="mx-auto max-w-6xl px-4 py-10">
+    <!-- Cambodia summary -->
+    <section aria-labelledby="khm" class="grid gap-4 md:grid-cols-2">
+      <h2 id="khm" class="sr-only">Cambodia at a glance</h2>
+      {
+        sections.map(({ c, cambodia }) => (
+          <div class="rounded-2xl border border-surface-200 p-6 dark:border-surface-800">
+            <p class="text-sm font-semibold text-primary-700 dark:text-primary-300">
+              {c.competition} · <span lang="km">កម្ពុជា</span> Cambodia
+            </p>
+            <p class="mt-1 text-xs text-surface-500">{c.name}</p>
+            <dl class="mt-4 grid grid-cols-4 gap-3 text-center">
+              {(['gold', 'silver', 'bronze', 'hm'] as const).map((k, i) => (
+                <div>
+                  <dt class="text-xs text-surface-500">{['Gold', 'Silver', 'Bronze', 'Hon. mention'][i]}</dt>
+                  <dd class="text-2xl font-bold tabular-nums">{cambodia[k]}</dd>
+                </div>
+              ))}
+            </dl>
+            <p class="mt-4 text-sm text-surface-600 dark:text-surface-400">
+              {cambodia.participations} participations since {cambodia.first} · {cambodia.contestants} contestants
+              {cambodia.bestRank && <> · best team rank {cambodia.bestRank} ({cambodia.bestRankYear})</>}
+            </p>
+          </div>
+        ))
+      }
+    </section>
+
+    {
+      sections.map(({ c, id, table, years }) => (
+        <section id={id} class="mt-16 scroll-mt-20" aria-labelledby={`${id}-h`}>
+          <h2 id={`${id}-h`} class="text-2xl font-bold">
+            {c.competition} <span class="font-normal text-surface-400">· {c.name}</span>
+          </h2>
+          <p class="mt-1 text-sm text-surface-500">
+            ASEAN countries, {years.at(-1)}–{years[0]}. Sorted by gold, then silver, bronze and honourable mentions.
+            {c.competition === 'IPhO' && ' IPhO has no official team ranking, so countries are compared by medals.'}
+          </p>
+
+          <!-- medal table -->
+          <div class="mt-5 overflow-x-auto rounded-2xl border border-surface-200 dark:border-surface-800">
+            <table class="w-full min-w-[46rem] text-left text-sm tabular-nums">
+              <thead class="bg-surface-50 text-xs text-surface-600 dark:bg-surface-900 dark:text-surface-400">
+                <tr>
+                  <th class="px-3 py-2.5 font-semibold">#</th>
+                  <th class="px-3 py-2.5 font-semibold">Country</th>
+                  <th class="px-3 py-2.5 text-right font-semibold">Years</th>
+                  <th class="px-3 py-2.5 text-right font-semibold">Gold</th>
+                  <th class="px-3 py-2.5 text-right font-semibold">Silver</th>
+                  <th class="px-3 py-2.5 text-right font-semibold">Bronze</th>
+                  <th class="px-3 py-2.5 text-right font-semibold">HM</th>
+                  <th class="w-1/3 px-3 py-2.5 font-semibold">Awards</th>
+                  {c.competition === 'IMO' && <th class="px-3 py-2.5 text-right font-semibold">Best rank</th>}
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-surface-100 dark:divide-surface-800">
+                {table.map((r, i) => (
+                  <tr class:list={[r.key === FOCUS && 'bg-primary-50/60 font-semibold dark:bg-primary-950/40']}>
+                    <td class="px-3 py-2 text-surface-400">{i + 1}</td>
+                    <td class="px-3 py-2">
+                      {r.country.en} <span class="text-xs font-normal text-surface-500" lang="km">{r.country.km}</span>
+                    </td>
+                    <td class="px-3 py-2 text-right">{r.participations}</td>
+                    <td class="px-3 py-2 text-right">{r.gold}</td>
+                    <td class="px-3 py-2 text-right">{r.silver}</td>
+                    <td class="px-3 py-2 text-right">{r.bronze}</td>
+                    <td class="px-3 py-2 text-right">{r.hm}</td>
+                    <td class="px-3 py-2">
+                      <div class="flex h-3 gap-0.5" aria-hidden="true">
+                        {(['gold', 'silver', 'bronze', 'hm'] as const).map((k, j) =>
+                          r[k] ? <span class:list={['rounded-sm', ['bg-amber-400', 'bg-slate-400', 'bg-orange-400', 'bg-primary-300'][j]]} style={`width:${(r[k] / maxMedals) * 100}%`} /> : null,
+                        )}
+                      </div>
+                    </td>
+                    {c.competition === 'IMO' && <td class="px-3 py-2 text-right">{r.bestRank ? `${r.bestRank} (${r.bestRankYear})` : '—'}</td>}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs text-surface-500">
+            <span><span class="mr-1 inline-block size-2.5 rounded-sm bg-amber-400" />Gold</span>
+            <span><span class="mr-1 inline-block size-2.5 rounded-sm bg-slate-400" />Silver</span>
+            <span><span class="mr-1 inline-block size-2.5 rounded-sm bg-orange-400" />Bronze</span>
+            <span><span class="mr-1 inline-block size-2.5 rounded-sm bg-primary-300" />Honourable mention</span>
+          </p>
+
+          <!-- year × country grid -->
+          <h3 class="mt-10 text-lg font-semibold">Year by year</h3>
+          <p class="text-sm text-surface-500">
+            {c.competition === 'IMO' ? 'Team rank (out of all participating countries) and awards.' : 'Awards per country.'} Blank = did not take part.
+          </p>
+          <div class="mt-3 max-h-[70vh] overflow-auto rounded-2xl border border-surface-200 dark:border-surface-800">
+            <table class="w-full min-w-[60rem] text-center text-xs tabular-nums">
+              <thead class="sticky top-0 z-10 bg-surface-50 text-surface-600 dark:bg-surface-900 dark:text-surface-400">
+                <tr>
+                  <th class="sticky left-0 bg-surface-50 px-2 py-2 text-left font-semibold dark:bg-surface-900">Year</th>
+                  {ASEAN.filter((a) => c.countries[a.key]).map((a) => (
+                    <th class:list={['px-2 py-2 font-semibold', a.key === FOCUS && 'text-primary-700 dark:text-primary-300']}>{a.en}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-surface-100 dark:divide-surface-800">
+                {years.map((y) => (
+                  <tr>
+                    <th scope="row" class="sticky left-0 bg-surface-0 px-2 py-1.5 text-left font-semibold dark:bg-surface-950">
+                      {y}
+                      <span class="block text-[10px] font-normal text-surface-400">{c.years[y]?.countries ? `${c.years[y].countries} countries` : ''}</span>
+                    </th>
+                    {ASEAN.filter((a) => c.countries[a.key]).map((a) => {
+                      const r = resultFor(c, a.key, y);
+                      return (
+                        <td class:list={['px-1.5 py-1.5 align-top', a.key === FOCUS && 'bg-primary-50/50 dark:bg-primary-950/30']}>
+                          {r && (
+                            <>
+                              {r.rank && <span class="block font-semibold text-surface-800 dark:text-surface-200">#{r.rank}</span>}
+                              <span class="inline-flex flex-wrap justify-center gap-0.5">
+                                {r.gold > 0 && <span class:list={['rounded px-1', medalClass.G]}>{r.gold}G</span>}
+                                {r.silver > 0 && <span class:list={['rounded px-1', medalClass.S]}>{r.silver}S</span>}
+                                {r.bronze > 0 && <span class:list={['rounded px-1', medalClass.B]}>{r.bronze}B</span>}
+                                {r.hm > 0 && <span class:list={['rounded px-1', medalClass.HM]}>{r.hm}HM</span>}
+                                {!r.rank && !(r.gold + r.silver + r.bronze + r.hm) && <span class="text-surface-400">·</span>}
+                              </span>
+                            </>
+                          )}
+                        </td>
+                      );
+                    })}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      ))
+    }
+
+    <!-- Cambodia contestants -->
+    <section id="cambodia" class="mt-16 scroll-mt-20" aria-labelledby="cambodia-h">
+      <h2 id="cambodia-h" class="text-2xl font-bold">Cambodia’s contestants <span class="font-normal text-surface-400" lang="km">· បេក្ខជនកម្ពុជា</span></h2>
+      <p class="mt-1 text-sm text-surface-500">Every student who represented Cambodia, with the award and individual rank published by the olympiad.</p>
+      <div class="mt-5 grid gap-6 lg:grid-cols-2">
+        {
+          sections.map(({ c, people }) => (
+            <div class="overflow-hidden rounded-2xl border border-surface-200 dark:border-surface-800">
+              <h3 class="border-b border-surface-200 px-4 py-3 font-semibold dark:border-surface-800">{c.competition} <span class="font-normal text-surface-500">· {people.length} contestants</span></h3>
+              <table class="w-full text-left text-sm tabular-nums">
+                <thead class="bg-surface-50 text-xs text-surface-600 dark:bg-surface-900 dark:text-surface-400">
+                  <tr>
+                    <th class="px-3 py-2 font-semibold">Year</th>
+                    <th class="px-3 py-2 font-semibold">Name</th>
+                    <th class="px-3 py-2 font-semibold">Award</th>
+                    <th class="px-3 py-2 text-right font-semibold">Rank</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-surface-100 dark:divide-surface-800">
+                  {people.map((p) => (
+                    <tr>
+                      <td class="px-3 py-2">{p.year}</td>
+                      <td class="px-3 py-2 font-medium">{p.url ? <a href={p.url} rel="noopener" class="hover:text-primary-700 hover:underline dark:hover:text-primary-300">{p.name}</a> : p.name}</td>
+                      <td class="px-3 py-2">{p.award ? <span class:list={['rounded px-1.5 py-0.5 text-xs', medalClass[p.award]]}>{AWARD_LABEL[p.award]}</span> : <span class="text-surface-400">–</span>}</td>
+                      <td class="px-3 py-2 text-right">{p.rank ?? '—'}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- sources -->
+    <section class="mt-16 grid gap-8 lg:grid-cols-2" aria-labelledby="src-h">
+      <div>
+        <h2 id="src-h" class="text-xl font-bold">Sources</h2>
+        <ul class="mt-4 space-y-3 text-sm">
+          <li>
+            <a href="https://www.imo-official.org/" rel="noopener" class="font-medium text-primary-700 hover:underline dark:text-primary-300">International Mathematical Olympiad – official results</a>
+            <span class="block text-surface-500">imo-official.org · team and individual results per country and year · fetched {IMO.fetched}</span>
+          </li>
+          <li>
+            <a href="https://ipho-unofficial.org/" rel="noopener" class="font-medium text-primary-700 hover:underline dark:text-primary-300">International Physics Olympiads – results database</a>
+            <span class="block text-surface-500">ipho-unofficial.org · {IPHO.sourceNote} · fetched {IPHO.fetched}</span>
+          </li>
+        </ul>
+      </div>
+      <div class="text-sm text-surface-600 dark:text-surface-400">
+        <h2 class="text-xl font-bold text-surface-900 dark:text-surface-0">Notes</h2>
+        <ul class="mt-4 list-disc space-y-2 pl-5">
+          <li>Names are shown as published by each olympiad (Latin script).</li>
+          <li>IMO 2020–2021 and IPhO 2021 were held online; IPhO 2020 was cancelled.</li>
+          <li>Laos has not taken part in IPhO; Brunei and Laos have taken part in the IMO once each since 2000.</li>
+          <li>Data is refreshed after each olympiad by re-running <code>scripts/fetch-olympiads.mjs</code>; raw pages are kept in our archive.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</BaseLayout>

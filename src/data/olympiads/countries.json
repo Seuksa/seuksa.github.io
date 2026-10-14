@@ -1,0 +1,72 @@
+[
+ {
+  "key": "KHM",
+  "en": "Cambodia",
+  "km": "កម្ពុជា",
+  "imo": "KHM",
+  "ipho": "KHM"
+ },
+ {
+  "key": "VNM",
+  "en": "Vietnam",
+  "km": "វៀតណាម",
+  "imo": "VNM",
+  "ipho": "VNM"
+ },
+ {
+  "key": "THA",
+  "en": "Thailand",
+  "km": "ថៃ",
+  "imo": "THA",
+  "ipho": "THA"
+ },
+ {
+  "key": "SGP",
+  "en": "Singapore",
+  "km": "សិង្ហបុរី",
+  "imo": "SGP",
+  "ipho": "SGP"
+ },
+ {
+  "key": "IDN",
+  "en": "Indonesia",
+  "km": "ឥណ្ឌូណេស៊ី",
+  "imo": "IDN",
+  "ipho": "IDN"
+ },
+ {
+  "key": "MYS",
+  "en": "Malaysia",
+  "km": "ម៉ាឡេស៊ី",
+  "imo": "MAS",
+  "ipho": "MAS"
+ },
+ {
+  "key": "PHL",
+  "en": "Philippines",
+  "km": "ហ្វីលីពីន",
+  "imo": "PHI",
+  "ipho": "PHI"
+ },
+ {
+  "key": "MMR",
+  "en": "Myanmar",
+  "km": "មីយ៉ាន់ម៉ា",
+  "imo": "MMR",
+  "ipho": "MMR"
+ },
+ {
+  "key": "LAO",
+  "en": "Laos",
+  "km": "ឡាវ",
+  "imo": "LAO",
+  "ipho": null
+ },
+ {
+  "key": "BRN",
+  "en": "Brunei",
+  "km": "ព្រុយណេ",
+  "imo": "BRU",
+  "ipho": "BRU"
+ }
+]
