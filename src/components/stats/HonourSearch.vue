@@ -37,6 +37,7 @@ onMounted(() => {
   q.value = p.get('q') ?? '';
   province.value = p.get('province');
   year.value = Number(p.get('year')) || null;
+  grade.value = Number(p.get('grade')) || null;
   // Links from the province chart (…?province=x#s-search) land on the honour roll once it has rendered.
   // Instant (not smooth) and after a beat, so chart islands hydrating above don't interrupt it.
   if (location.hash) setTimeout(() => document.querySelector(location.hash)?.scrollIntoView({ block: 'start', behavior: 'instant' }), 200);
@@ -140,7 +141,12 @@ const medal = (rank: number) => (rank === 1 ? 'bg-amber-400 text-amber-950' : ra
           <template v-for="(r, i) in page" :key="r.url">
           <tr v-if="startsYear(i)" class="bg-surface-50/70 dark:bg-surface-900/60">
             <th colspan="6" scope="rowgroup" class="px-3 py-1.5 text-left text-xs font-semibold text-surface-600 dark:text-surface-300" lang="en">
-              {{ r.year }} <span class="font-normal text-surface-400">· {{ yearCount(r.year) }} honouree{{ yearCount(r.year) === 1 ? '' : 's' }}</span>
+              <button
+                type="button"
+                class="rounded px-1 font-semibold text-primary-700 hover:bg-primary-50 hover:underline dark:text-primary-300 dark:hover:bg-primary-950"
+                :title="year === r.year ? 'Show all years' : `Show only ${r.year}`"
+                @click="year = year === r.year ? null : r.year"
+              >{{ r.year }}</button> <span class="font-normal text-surface-400">· {{ yearCount(r.year) }} honouree{{ yearCount(r.year) === 1 ? '' : 's' }}</span>
               <a :href="`/stats/outstanding-students/${r.year}/`" class="ml-2 font-normal text-primary-700 hover:underline dark:text-primary-300">year page →</a>
             </th>
           </tr>
