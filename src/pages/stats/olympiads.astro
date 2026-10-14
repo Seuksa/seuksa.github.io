@@ -2,7 +2,8 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
-import { ASEAN, AWARD_LABEL, COMPETITIONS, IMO, IPHO, medalTable, resultFor, yearsOf, type Competition } from '../../data/olympiads';
+import OlympiadContestants from '../../components/stats/OlympiadContestants.vue';
+import { ASEAN, COMPETITIONS, IMO, IPHO, medalTable, resultFor, yearsOf, type Competition } from '../../data/olympiads';
 
 const FOCUS = 'KHM';
 const medalClass: Record<string, string> = {
@@ -187,35 +188,7 @@ const maxMedals = Math.max(...sections.flatMap((s) => s.table.map((r) => r.gold 
     <section id="cambodia" class="mt-16 scroll-mt-20" aria-labelledby="cambodia-h">
       <h2 id="cambodia-h" class="text-2xl font-bold">Cambodia’s contestants <span class="font-normal text-surface-400" lang="km">· បេក្ខជនកម្ពុជា</span></h2>
       <p class="mt-1 text-sm text-surface-500">Every student who represented Cambodia, with the award and individual rank published by the olympiad.</p>
-      <div class="mt-5 grid gap-6 lg:grid-cols-2">
-        {
-          sections.map(({ c, people }) => (
-            <div class="overflow-hidden rounded-2xl border border-surface-200 dark:border-surface-800">
-              <h3 class="border-b border-surface-200 px-4 py-3 font-semibold dark:border-surface-800">{c.competition} <span class="font-normal text-surface-500">· {people.length} contestants</span></h3>
-              <table class="w-full text-left text-sm tabular-nums">
-                <thead class="bg-surface-50 text-xs text-surface-600 dark:bg-surface-900 dark:text-surface-400">
-                  <tr>
-                    <th class="px-3 py-2 font-semibold">Year</th>
-                    <th class="px-3 py-2 font-semibold">Name</th>
-                    <th class="px-3 py-2 font-semibold">Award</th>
-                    <th class="px-3 py-2 text-right font-semibold">Rank</th>
-                  </tr>
-                </thead>
-                <tbody class="divide-y divide-surface-100 dark:divide-surface-800">
-                  {people.map((p) => (
-                    <tr>
-                      <td class="px-3 py-2">{p.year}</td>
-                      <td class="px-3 py-2 font-medium">{p.url ? <a href={p.url} rel="noopener" class="hover:text-primary-700 hover:underline dark:hover:text-primary-300">{p.name}</a> : p.name}</td>
-                      <td class="px-3 py-2">{p.award ? <span class:list={['rounded px-1.5 py-0.5 text-xs', medalClass[p.award]]}>{AWARD_LABEL[p.award]}</span> : <span class="text-surface-400">–</span>}</td>
-                      <td class="px-3 py-2 text-right">{p.rank ?? '—'}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          ))
-        }
-      </div>
+      <OlympiadContestants client:load lists={sections.map(({ c, people }) => ({ competition: c.competition, people }))} />
     </section>
 
     <!-- sources -->
