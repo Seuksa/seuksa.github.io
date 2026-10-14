@@ -35,7 +35,7 @@ const LINKS: Link[] = [
   { competition: 'IMO', name: 'Theanwin Mom', honours: [h(2016, 9, 'math', 2), h(2019, 12, 'math', 5)] },
   { competition: 'IMO', name: 'Yongchhing Chhun', honours: [h(2016, 9, 'math', 5)] },
   { competition: 'IMO', name: 'Usa An', honours: [h(2016, 9, 'math', 6), h(2019, 12, 'math', 3)] },
-  { competition: 'IMO', name: 'Seyha Sun', honours: [h(2016, 9, 'math', 7)], possible: true }, // ស៊ិន សីហា
+  { competition: 'IMO', name: 'Seyha Sun', honours: [h(2016, 9, 'math', 7)] },
   { competition: 'IMO', name: 'Eangly Te', honours: [h(2016, 9, 'math', 10)] },
   { competition: 'IMO', name: 'Borey Norint Son', honours: [h(2023, 9, 'math', 1)] },
   { competition: 'IMO', name: 'Lyhour Ny', honours: [h(2023, 9, 'math', 3)] },
