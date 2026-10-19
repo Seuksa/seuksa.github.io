@@ -2,6 +2,7 @@
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ImageLightbox from '../components/ImageLightbox.astro';
 import { PROSE, formatDate, htmlLang } from '../lib/site';
 
 export async function getStaticPaths() {
@@ -17,6 +18,7 @@ const { Content } = await render(entry);
     <Breadcrumbs items={[{ label: 'Seuksa', href: '/' }, { label: entry.data.title }]} />
     <h1 class="mt-8 text-3xl font-bold tracking-tight sm:text-4xl">{entry.data.title}</h1>
     {entry.data.updated && <p class="mt-2 text-sm text-surface-500">Updated {formatDate(entry.data.updated)}</p>}
-    <div class:list={[PROSE, 'mt-8 overflow-x-auto']}><Content /></div>
+    <div data-lightbox class:list={[PROSE, 'mt-8 overflow-x-auto']}><Content /></div>
   </article>
+  <ImageLightbox />
 </BaseLayout>

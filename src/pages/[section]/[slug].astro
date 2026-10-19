@@ -2,6 +2,7 @@
 import { render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import ImageLightbox from '../../components/ImageLightbox.astro';
 import { PROSE, SECTIONS, articleUrl, formatDate, getArticles, htmlLang, tagUrl, type Article } from '../../lib/site';
 
 export async function getStaticPaths() {
@@ -58,9 +59,9 @@ const isQuote = section === 'quotes';
       }
     </header>
 
-    {cover && !isQuote && <img src={cover} alt="" class="mt-8 w-full rounded-2xl border border-surface-200 dark:border-surface-800" />}
+    {cover && !isQuote && <img src={cover} alt={title} data-lightbox class="mt-8 w-full rounded-2xl border border-surface-200 dark:border-surface-800" />}
 
-    <div class:list={[PROSE, 'mt-8', isQuote && 'prose-xl rounded-3xl bg-primary-50/60 p-8 dark:bg-primary-950/40']}>
+    <div data-lightbox class:list={[PROSE, 'mt-8', isQuote && 'prose-xl rounded-3xl bg-primary-50/60 p-8 dark:bg-primary-950/40']}>
       <Content />
     </div>
     {quoteAuthor && <p class="mt-4 text-right text-lg font-medium text-surface-700 dark:text-surface-300">— {quoteAuthor}</p>}
@@ -137,4 +138,5 @@ const isQuote = section === 'quotes';
       </aside>
     )
   }
+  <ImageLightbox />
 </BaseLayout>

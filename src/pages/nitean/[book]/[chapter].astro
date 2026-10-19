@@ -2,6 +2,7 @@
 import { render, type CollectionEntry } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import ImageLightbox from '../../../components/ImageLightbox.astro';
 import ReaderControls from '../../../components/ReaderControls.vue';
 import { PROSE_BOOK, chapterUrl, getBooks, getChapters, htmlLang } from '../../../lib/site';
 
@@ -68,7 +69,7 @@ const toc = chapters.map((c) => ({
       <div class="mx-auto mt-6 h-px w-16 bg-primary-300" aria-hidden="true"></div>
     </header>
 
-    <div class={PROSE_BOOK}>
+    <div data-lightbox class={PROSE_BOOK}>
       <Content />
     </div>
 
@@ -95,4 +96,5 @@ const toc = chapters.map((c) => ({
       }
     </nav>
   </article>
+  <ImageLightbox />
 </BaseLayout>
