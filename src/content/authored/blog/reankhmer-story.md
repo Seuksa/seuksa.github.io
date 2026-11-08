@@ -6,21 +6,29 @@ date: "2026-11-09T09:00:00"
 author: "seuksa"
 categories: ["Products & Services"]
 tags: ["Khmer","Khmer Language","Education","Cambodia","Technology"]
-description: "កម្មវិធី រៀនខ្មែរ ត្រូវបានបង្កើតក្នុងឆ្នាំ ២០០៦ ហើយបាត់កូដដើម។ ឥឡូវនេះ យើងបានសង្គ្រោះមេរៀន និងសំឡេងពិតប្រហែល ៣០០ ហើយសាងសង់ឡើងវិញជាកម្មវិធីប្រើបានគ្មានអ៊ីនធឺណិត នៅ rean.seuksa.com — សម្រាប់ក្រុមគ្រួសារខ្មែរនៅក្រៅប្រទេស។"
+description: "ក្រុមយើងបីនាក់បានបង្កើតកម្មវិធី រៀនខ្មែរ ក្នុងឆ្នាំ ២០០៦ ហើយក្រោយមកកូដដើមបានបាត់។ ឥឡូវនេះ យើងបានសង្គ្រោះមេរៀន និងសំឡេងពិតប្រហែល ៣០០ ហើយសាងសង់ឡើងវិញជាកម្មវិធីប្រើបានគ្មានអ៊ីនធឺណិត នៅ rean.seuksa.com — សម្រាប់ក្រុមគ្រួសារខ្មែរនៅក្រៅប្រទេស។"
 cover: "/media/seuksa/blog/reankhmer/cover.jpg"
 lang: "km+en"
 source: "https://github.com/Seuksa/reankhmer"
 ---
 
+## ក្រុមយើងបីនាក់ · Three people, one idea
+
+រៀនខ្មែរ ចាប់ផ្តើមពីមនុស្សបីនាក់៖ **Sok Pongsametrey**, **Sok Leaksmy** និង **Ouk Sidavy**។ គំនិតនេះជារបស់យើងទាំងបីនាក់ ហើយយើងបានធ្វើវាជាមួយគ្នាគ្រប់ជំហាន។ Sok Pongsametrey ជាអ្នកដឹកនាំក្រុម គ្រប់គ្រងគម្រោង និងរៀបចំមាតិកាមេរៀនទាំងអស់ ហើយយើងទាំងបីនាក់បានរួមគ្នាសាងសង់កម្មវិធី និងបង្កើតចលនា Flash។ រៀនខ្មែរ ថ្មីនៅថ្ងៃនេះ ក៏នៅតែជាស្នាដៃរបស់ក្រុមបីនាក់នេះដដែល។
+
+> **Three people, one idea.** ReanKhmer was created by Sok Pongsametrey, Sok Leaksmy and Ouk Sidavy. The idea belonged to all three of them, and all three built it: Sok Pongsametrey led the team, managed the project and wrote the lesson content, and together they built the program and its Flash animations. The new ReanKhmer is still their work.
+
 កូនខ្មែរជាច្រើនដែលធំធាត់នៅក្រៅប្រទេស អាចនិយាយភាសាខ្មែរជាមួយឪពុកម្តាយបាន ប៉ុន្តែមិនអាចអាន ឬសរសេរអក្សរខ្មែរបានទេ។ **រៀនខ្មែរ (ReanKhmer)** កើតចេញពីបញ្ហានេះ៖ ជាកម្មវិធីរៀនអាន ស្តាប់ និងនិយាយភាសាខ្មែរ ដែលមានសំឡេងអ្នកនិយាយពិត (native speakers) គ្រប់អក្សរ គ្រប់ពាក្យ និងគ្រប់ប្រយោគ។
 
 ឥឡូវនេះ អ្នកអាចប្រើវាដោយឥតគិតថ្លៃនៅ **[rean.seuksa.com](https://rean.seuksa.com)** នៅលើទូរស័ព្ទ ថេប្លេត ឬកុំព្យូទ័រ ហើយប្រើបានទោះគ្មានអ៊ីនធឺណិតក៏ដោយ។
 
-> **In short:** ReanKhmer began in 2006 as a Windows app for the Royal University of Phnom Penh Science Fair. Its source code was later lost, but the lessons and about 300 native-speaker recordings survived inside the old program. In 2026 we recovered them and rebuilt ReanKhmer as a free, offline-first web app for Khmer families abroad, with a Khmer–English interface and a Khmer keyboard trainer. This post tells that story and draws the learning path the course follows.
+> **In short:** ReanKhmer began in 2006 as a Windows app built by our team of three for the Royal University of Phnom Penh Science Fair. Its source code was later lost, but the lessons and about 300 native-speaker recordings survived inside the old program. In 2026 we recovered them and rebuilt ReanKhmer as a free, offline-first web app for Khmer families abroad, with a Khmer–English interface and a Khmer keyboard trainer. This post tells that story and draws the learning path the course follows.
 
 ## ឆ្នាំ ២០០៦៖ ពិព័រណ៍វិទ្យាសាស្ត្រ · 2006: a science fair project
 
-រៀនខ្មែរ ត្រូវបានបង្កើតឡើងសម្រាប់ **ពិព័រណ៍វិទ្យាសាស្ត្រ (Science Fair) ឆ្នាំ ២០០៦** នៅសាកលវិទ្យាល័យភូមិន្ទភ្នំពេញ (RUPP) ដែលឧបត្ថម្ភដោយមូលនិធិ Heinrich Böll។ លោក **សុខ ពង្សាមេត្រី (Sok Pongsametrey)** ជាអ្នកដឹកនាំគម្រោង អ្នកគ្រប់គ្រង និងជាអ្នករៀបចំមាតិកាទាំងអស់។ គម្រោងនេះជាផ្នែកមួយនៃការងាររបស់លោកនៅ **CSC Cambodia** ហើយសំឡេងទាំងអស់ត្រូវបានថតនៅស្ទូឌីយោទីនោះ ជាមួយសហការីរបស់លោក។
+រៀនខ្មែរ ត្រូវបានបង្កើតឡើងសម្រាប់ **ពិព័រណ៍វិទ្យាសាស្ត្រ (Science Fair) ឆ្នាំ ២០០៦** នៅសាកលវិទ្យាល័យភូមិន្ទភ្នំពេញ (RUPP) ដែលឧបត្ថម្ភដោយមូលនិធិ Heinrich Böll។ សំឡេងទាំងអស់ត្រូវបានថតនៅស្ទូឌីយោរបស់ CSC Cambodia ដោយមានសហការីរបស់ Sok Pongsametrey នៅទីនោះជួយផ្តល់ឧបករណ៍ និងជួយថតសំឡេង។ រៀនខ្មែរ មិនមែនជាគម្រោងរបស់ CSC Cambodia ទេ — ពួកគេគ្រាន់តែជាដៃជួយដ៏សប្បុរសប៉ុណ្ណោះ ហើយយើងសូមអរគុណយ៉ាងជ្រាលជ្រៅ។
+
+The recordings were made in the CSC Cambodia studio, where Sok Pongsametrey's colleagues lent equipment and helped with recording. ReanKhmer was not a CSC Cambodia project; they were a generous helping hand.
 
 កម្មវិធីដើមដំណើរការលើ Windows XP ដោយប្រើ VB.NET, Flash 8 និងមូលដ្ឋានទិន្នន័យ Access។ វាមាន **៥ ជំពូក**៖ ព្យញ្ជនៈ និងស្រៈ, ការប្រកបពាក្យ, ជើងអក្សរ, អំណាន និងសន្ទនា — ព្រមទាំងវចនានុក្រម កំណត់ចំណាំវេយ្យាករណ៍ ល្បែងវាយអក្សរ និងការធ្វើតេស្ត។
 
@@ -84,6 +92,6 @@ The original needed Flash, Khmer Unicode fonts and even a Windows theme change b
 
 ## អ្នករួមចំណែក · Credits
 
-- **សុខ ពង្សាមេត្រី (Sok Pongsametrey)** — មាតិកាទាំងអស់ ការដឹកនាំគម្រោង និងការគ្រប់គ្រង · content, project lead and management.
-- **សំឡេង · Audio** — ថតក្នុងឆ្នាំ ២០០៦ នៅស្ទូឌីយោ CSC Cambodia ជាមួយសហការី · recorded at the CSC Cambodia studio with colleagues.
-- **អភិវឌ្ឍវេទិកា និង Flash · Platform and Flash development** — Sok Pongsametrey, Sok Leaksmy, Ouk Sidavy · RUPP Science Fair 2006.
+- **ក្រុម រៀនខ្មែរ · The ReanKhmer team** — Sok Pongsametrey, Sok Leaksmy, Ouk Sidavy · គំនិត វេទិកា និង Flash · the idea, the platform and the Flash work · RUPP Science Fair 2006.
+- **Sok Pongsametrey** — អ្នកដឹកនាំក្រុម មាតិកាទាំងអស់ និងការគ្រប់គ្រង · team lead, all content and management.
+- **សូមអរគុណ · Thanks** — សហការីនៅ CSC Cambodia ដែលបានផ្តល់ស្ទូឌីយោ ឧបករណ៍ និងជួយថតសំឡេង · colleagues at CSC Cambodia who lent the studio and equipment and helped record the audio. ReanKhmer was not a CSC Cambodia project.
