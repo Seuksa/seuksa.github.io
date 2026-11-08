@@ -26,9 +26,9 @@ source: "https://github.com/Seuksa/reankhmer"
 
 ## ឆ្នាំ ២០០៦៖ ពិព័រណ៍វិទ្យាសាស្ត្រ · 2006: a science fair project
 
-រៀនខ្មែរ ត្រូវបានបង្កើតឡើងសម្រាប់ **ពិព័រណ៍វិទ្យាសាស្ត្រ (Science Fair) ឆ្នាំ ២០០៦** នៅសាកលវិទ្យាល័យភូមិន្ទភ្នំពេញ (RUPP) ដែលឧបត្ថម្ភដោយមូលនិធិ Heinrich Böll។ សំឡេងទាំងអស់ត្រូវបានថតនៅស្ទូឌីយោរបស់ CSC Cambodia ដោយមានសហការីរបស់ Sok Pongsametrey នៅទីនោះជួយផ្តល់ឧបករណ៍ និងជួយថតសំឡេង។ រៀនខ្មែរ មិនមែនជាគម្រោងរបស់ CSC Cambodia ទេ — ពួកគេគ្រាន់តែជាដៃជួយដ៏សប្បុរសប៉ុណ្ណោះ ហើយយើងសូមអរគុណយ៉ាងជ្រាលជ្រៅ។
+រៀនខ្មែរ ត្រូវបានបង្កើតឡើងសម្រាប់ **ពិព័រណ៍វិទ្យាសាស្ត្រ (Science Fair) ឆ្នាំ ២០០៦** នៅសាកលវិទ្យាល័យភូមិន្ទភ្នំពេញ (RUPP) ដែលឧបត្ថម្ភដោយមូលនិធិ Heinrich Böll។ សំឡេងទាំងអស់ត្រូវបានថតនៅស្ទូឌីយោរបស់ CSC Cambodia ដោយមានសហការីរបស់ Sok Pongsametrey នៅទីនោះជួយផ្តល់ឧបករណ៍ និងជួយថតសំឡេង។ ពួកគេបានជួយគាំទ្រការងារនេះ ហើយយើងសូមអរគុណយ៉ាងជ្រាលជ្រៅ។
 
-The recordings were made in the CSC Cambodia studio, where Sok Pongsametrey's colleagues lent equipment and helped with recording. ReanKhmer was not a CSC Cambodia project; they were a generous helping hand.
+The recordings were made in the CSC Cambodia studio, where Sok Pongsametrey's colleagues lent equipment and helped with recording. We are deeply grateful for their support.
 
 កម្មវិធីដើមដំណើរការលើ Windows XP ដោយប្រើ VB.NET, Flash 8 និងមូលដ្ឋានទិន្នន័យ Access។ វាមាន **៥ ជំពូក**៖ ព្យញ្ជនៈ និងស្រៈ, ការប្រកបពាក្យ, ជើងអក្សរ, អំណាន និងសន្ទនា — ព្រមទាំងវចនានុក្រម កំណត់ចំណាំវេយ្យាករណ៍ ល្បែងវាយអក្សរ និងការធ្វើតេស្ត។
 
@@ -94,4 +94,4 @@ The original needed Flash, Khmer Unicode fonts and even a Windows theme change b
 
 - **ក្រុម រៀនខ្មែរ · The ReanKhmer team** — Sok Pongsametrey, Sok Leaksmy, Ouk Sidavy · គំនិត វេទិកា និង Flash · the idea, the platform and the Flash work · RUPP Science Fair 2006.
 - **Sok Pongsametrey** — អ្នកដឹកនាំក្រុម មាតិកាទាំងអស់ និងការគ្រប់គ្រង · team lead, all content and management.
-- **សូមអរគុណ · Thanks** — សហការីនៅ CSC Cambodia ដែលបានផ្តល់ស្ទូឌីយោ ឧបករណ៍ និងជួយថតសំឡេង · colleagues at CSC Cambodia who lent the studio and equipment and helped record the audio. ReanKhmer was not a CSC Cambodia project.
+- **សូមអរគុណ · Thanks** — សហការីនៅ CSC Cambodia ដែលបានផ្តល់ស្ទូឌីយោ ឧបករណ៍ និងជួយថតសំឡេង · colleagues at CSC Cambodia who lent the studio and equipment and helped record the audio.
