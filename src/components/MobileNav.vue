@@ -6,6 +6,7 @@ import Drawer from 'primevue/drawer';
 defineProps<{
   items: { label: string; href: string; icon?: string }[];
   other: { label: string; href: string; icon: string };
+  rean: { label: string; href: string; icon: string };
   title: string;
   current: string;
 }>();
@@ -28,6 +29,9 @@ const open = ref(false);
           <i :class="i.icon" class="text-surface-400" />{{ i.label }}
         </a>
         <hr class="my-3 border-surface-200 dark:border-surface-800" />
+        <a :href="rean.href" class="mb-1 flex items-center gap-3 rounded-lg bg-teal-700 px-3 py-2.5 font-medium text-white hover:bg-teal-800">
+          <i :class="rean.icon" />{{ rean.label }}
+        </a>
         <a :href="other.href" class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-primary-700 hover:bg-primary-50 dark:text-primary-300 dark:hover:bg-primary-950">
           <i :class="other.icon" />{{ other.label }}
         </a>

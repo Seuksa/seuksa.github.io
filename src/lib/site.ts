@@ -50,8 +50,6 @@ export const SECTION_ORDER: Section[] = ['blog', 'answers', 'stories', 'quotes']
 export const NAV: Record<Brand, { label: string; href: string; icon?: string }[]> = {
   seuksa: [
     ...SECTION_ORDER.map((s) => ({ label: SECTIONS[s].title, href: `/${s}/`, icon: SECTIONS[s].icon })),
-    // ReanKhmer (rean.seuksa.com): the separate offline Khmer-learning app.
-    { label: 'Learn Khmer', href: 'https://rean.seuksa.com/', icon: 'pi pi-language' },
     { label: 'Stats', href: '/stats/', icon: 'pi pi-chart-bar' },
     { label: 'Topics', href: '/tags/', icon: 'pi pi-tags' },
     { label: 'About', href: '/about/', icon: 'pi pi-info-circle' },
@@ -62,6 +60,9 @@ export const NAV: Record<Brand, { label: string; href: string; icon?: string }[]
     { label: 'About', href: '/nitean/about/', icon: 'pi pi-info-circle' },
   ],
 };
+
+/** ReanKhmer (rean.seuksa.com): the offline Khmer-learning app, linked from the header like Nitean. */
+export const REAN = { href: 'https://rean.seuksa.com/', label: 'រៀនខ្មែរ Learn Khmer', icon: 'pi pi-language' } as const;
 
 export const articleUrl = (a: Article) => `/${a.data.section}/${a.data.slug}/`;
 export const tagUrl = (tag: string) => `/tags/${slugify(tag)}/`;
