@@ -72,6 +72,43 @@ const totalChapters = books.reduce((n, b) => n + b.data.chapters, 0);
     </div>
   </section>
 
+  <!-- ReanKhmer bridge (rean.seuksa.com) -->
+  <section class="mx-auto mb-16 max-w-6xl px-4" aria-labelledby="reankhmer-title">
+    <div class="grid items-center gap-10 overflow-hidden rounded-3xl bg-gradient-to-br from-teal-700 to-teal-950 p-8 text-teal-50 sm:p-12 lg:grid-cols-[1.3fr_1fr]">
+      <div>
+        <p class="text-sm font-semibold tracking-widest text-teal-200 uppercase">New · Learn Khmer</p>
+        <h2 id="reankhmer-title" class="mt-3 text-3xl font-bold">
+          <span lang="km">រៀនខ្មែរ</span> · ReanKhmer
+        </h2>
+        <p class="mt-4 text-teal-100" lang="km">
+          រៀនអាន ស្តាប់ និងនិយាយភាសាខ្មែរ ជាមួយសំឡេងពិត — សម្រាប់ក្រុមគ្រួសារខ្មែរនៅក្រៅប្រទេស។ ប្រើបានទោះគ្មានអ៊ីនធឺណិត។
+        </p>
+        <p class="mt-2 text-sm text-teal-200">
+          Letters, vowels, spelling, reading, conversation and NiDA keyboard typing — 21 lessons and ~300 native-speaker
+          recordings, first made in 2006 and rebuilt as an offline app.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="https://rean.seuksa.com/" class="inline-flex items-center gap-2 rounded-lg bg-white px-5 py-3 font-medium text-teal-900 hover:bg-teal-50">
+            <i class="pi pi-play"></i> <span lang="km">ចាប់ផ្តើមរៀន</span> Start learning
+          </a>
+          <a href="/blog/reankhmer-story/" class="inline-flex items-center gap-2 rounded-lg border border-teal-300/60 px-5 py-3 font-medium hover:bg-white/10">
+            Read the story <i class="pi pi-arrow-right text-sm"></i>
+          </a>
+        </div>
+      </div>
+      <a href="https://rean.seuksa.com/letters" class="grid grid-cols-3 gap-3 justify-self-center lg:justify-self-end" aria-label="ReanKhmer consonants" lang="km">
+        {
+          [['ក', 'Gor', 1], ['ខ', 'Khor', 1], ['គ', 'Kou', 2], ['ឃ', 'Khou', 2], ['ង', 'Ngou', 2], ['ច', 'Chor', 1]].map(([c, r, s]) => (
+            <span class:list={['flex size-20 flex-col items-center justify-center rounded-2xl border-2 sm:size-24', s === 1 ? 'border-teal-300 bg-teal-50 text-teal-900' : 'border-amber-300 bg-amber-50 text-amber-900']}>
+              <span class="font-khmer-serif text-4xl leading-none sm:text-5xl">{c}</span>
+              <span class="mt-1 text-xs opacity-70" lang="en">{r}</span>
+            </span>
+          ))
+        }
+      </a>
+    </div>
+  </section>
+
   <!-- Latest blog -->
   <section class="mx-auto max-w-6xl px-4">
     <div class="mb-6 flex items-end justify-between">
