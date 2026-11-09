@@ -51,6 +51,19 @@ const story = [
         content lives as books with parts and chapters, such as the complete <em>Khmer Folktales</em> collection.
         Short articles stay on Seuksa; anything meant to be read as a book belongs to Nitean.
       </p>
+      <h2>ReanKhmer – learn to read and speak Khmer</h2>
+      <p>
+        <a href="https://rean.seuksa.com/">ReanKhmer (<span lang="km">រៀនខ្មែរ</span>)</a> is Seuksa’s free app for learning
+        Khmer: letters, vowels, spelling, reading, conversation and NiDA keyboard typing, with about 300 native-speaker
+        recordings. First made in 2006 and rebuilt as an offline app, it is made for Khmer families abroad.
+        <a href="/blog/reankhmer-story/">Read its story</a>.
+      </p>
+      <h2>Who is behind Seuksa</h2>
+      <p>
+        Seuksa, Nitean and ReanKhmer are run by Sok Pongsametrey, who also writes
+        <a href="https://osify.com/">OSIFY</a> – notes on software and computing since 2008, many of them in Khmer.
+        His technical and open-source work is listed at <a href="https://osify.com/work/">osify.com/work</a>.
+      </p>
       <h2>Contact &amp; contribute</h2>
       <p lang="km">សូមគាំទ្រយើង និងសូមផ្ញើអត្ថបទ រឿង ឬសម្រង់ពាក្យ មកកាន់យើងខ្ញុំតាមរយៈអ៊ីមែល <a href="mailto:hello@seuksa.com">hello@seuksa.com</a>។ សូមអរគុណ៕</p>
       <p>
@@ -64,6 +77,18 @@ const story = [
     </div>
 
     <aside class="space-y-6">
+      <div class="rounded-2xl border border-amber-300 bg-amber-50 p-6 dark:border-amber-800 dark:bg-amber-950/40">
+        <h2 class="font-semibold">Support Seuksa <span class="font-normal text-surface-500" lang="km">· គាំទ្រយើង</span></h2>
+        <p class="mt-2 text-sm">
+          Seuksa, Nitean and ReanKhmer are free, with no ads. If they help you, a coffee helps keep them going.
+        </p>
+        <div class="mt-4 flex items-center gap-4">
+          <img src="/media/buymeacoffee-qr.webp" alt="QR code linking to buymeacoffee.com/mtstuffs" width="112" height="112" loading="lazy" decoding="async" class="size-28 rounded-xl bg-white p-1.5" />
+          <a href="https://buymeacoffee.com/mtstuffs" rel="noopener" class="inline-flex items-center gap-2 rounded-lg bg-amber-600 px-3 py-2 text-sm font-medium text-white hover:bg-amber-700">
+            ☕ Buy us a coffee
+          </a>
+        </div>
+      </div>
       <div class="rounded-2xl border border-primary-200 bg-primary-50 p-6 dark:border-primary-800 dark:bg-primary-950/40">
         <h2 class="font-semibold">Contact us <span class="font-normal text-surface-500" lang="km">· ទំនាក់ទំនង</span></h2>
         <a href="mailto:hello@seuksa.com" class="mt-3 inline-flex items-center gap-2 font-medium text-primary-700 hover:underline dark:text-primary-300">
@@ -90,6 +115,12 @@ const story = [
         <h2 class="font-semibold">Our story</h2>
         <ul class="mt-3 space-y-2 text-sm">
           {story.map((s) => <li><a class="text-primary-700 hover:underline dark:text-primary-300" href={s.href}>{s.label}</a></li>)}
+        </ul>
+        <h2 class="mt-6 font-semibold">Our other sites</h2>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li><a class="text-primary-700 hover:underline dark:text-primary-300" href="/nitean/">Nitean (និទាន) – Khmer book library</a></li>
+          <li><a class="text-primary-700 hover:underline dark:text-primary-300" href="https://rean.seuksa.com/">ReanKhmer (រៀនខ្មែរ) – learn Khmer</a></li>
+          <li><a class="text-primary-700 hover:underline dark:text-primary-300" href="https://osify.com/">OSIFY – software &amp; computing notes</a></li>
         </ul>
         <h2 class="mt-6 font-semibold">Useful pages</h2>
         <ul class="mt-3 space-y-2 text-sm">
